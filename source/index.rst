@@ -40,7 +40,7 @@ found in the `TimeTagger4 User Guide
 <https://download.cronologic.de/TimeTagger/TimeTagger4_User_Guide.pdf>`_.
 
 This User Guide is also available as `PDF download 
-<https://docs.cronologic.de/_/downloads/timetagger_modules/en/latest/pdf/>`_.
+<https://docs.cronologic.de/_/downloads/timetaggermodules/en/latest/pdf/>`_.
 
 The user guides of all products by cronologic GmbH & Co. KG are available 
 online at `docs.cronologic.de <https://docs.cronologic.de>`_.

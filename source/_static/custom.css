@@ -1,0 +1,93 @@
+@import url("default.css");
+
+.ctypered {
+  color: #8E2100;
+}
+.cronoblue {
+  color: #376EB5;
+}
+.red {
+  color: red;
+}
+
+body {
+  font-feature-settings: "tnum" 1;
+}
+
+div.sphinxsidebar {
+    font-feature-settings: "tnum" 1;
+    max-height: 95%;
+    overflow-y: auto;
+}
+
+.sidebar-brand-text {
+    color: var(--color-sidebar-brand-text);
+    font-size: 1.0rem;
+    overflow-wrap: break-word;
+}
+
+.sidebar-brand:focus-within,
+.sidebar-brand:hover {
+    background: var(--color-sidebar-item-background--hover)
+}
+
+.sidebar-brand-extra {
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    padding: 0 var(--sidebar-item-spacing-horizontal) 0;
+    text-decoration: none
+}
+.sidebar-brand-extra:focus-within,
+.sidebar-brand-extra:hover {
+    background: var(--color-sidebar-item-background--hover)
+}
+
+.bottom-of-page-extra {
+    align-items: center;
+    border-top: 1px solid var(--color-background-border);
+    color: var(--color-foreground-secondary);
+    display: flex;
+    justify-content: space-between;
+    line-height: 1.5;
+    margin-top: 0;
+    padding-bottom: 1rem;
+    padding-top: 1rem
+}
+
+
+h1, h2, h3, h4, h5 h6 {
+  font-feature-settings: "tnum" 0;
+  font-weight: bold;
+  color: var(--color-headers);
+}
+
+h1 {
+  font-size: 150%;
+}
+
+
+h2 {
+  font-size: 130%;
+}
+
+h3,
+h4,
+h5,
+h6 {
+  font-size: 110%;
+  color: var(--color-foreground-secondary)
+}
+
+.caption-number{
+  font-weight: bold;
+}
+
+.caption-number,
+.caption-text {
+  color: grey;
+}
+
+figcaption {
+  padding-bottom: 2.25em;
+}

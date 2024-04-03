@@ -47,8 +47,3 @@
 .. role:: cronoblue
 
 .. role:: red
-
-.. attention:: 
-
-    This User Guide is under active development and is subject to major 
-    changes.

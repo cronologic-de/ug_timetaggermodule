@@ -6,7 +6,7 @@ This is a Sphinx project that creates the online documentation for the
 [TimeTagger-Module](https://www.cronologic.de/product/tdc-modules)
 by [cronologic GmbH & Co. KG](https://www.cronologic.de).
 
-XeLateX, Python, and doxygen are necessary for compilation.
+XeLateX and Python are necessary for compilation.
 
 ## Setup and installation
 

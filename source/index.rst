@@ -45,6 +45,7 @@ online at `docs.cronologic.de <https://docs.cronologic.de>`_.
 
 .. toctree::
    :maxdepth: 2
+   :numbered: 3
    :hidden:
    
    overview

@@ -43,3 +43,7 @@ Features
 - 5 to 0.625 GHits/s per channel for bursts of up to 3900 stops
 - 40 MHits/s per channel of sustained stops
 - 60 MHits/s over all channels of sustained stops
+
+For an extensive overview of all features and functions, please refer to the
+`TimeTagger4 User Guide 
+<https://download.cronologic.de/TimeTagger/TimeTagger4_User_Guide.pdf>`_.

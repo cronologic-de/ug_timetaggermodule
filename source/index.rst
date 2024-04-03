@@ -8,6 +8,10 @@ TimeTagger Modules User Guide
       :align: center
       :scale: 100%
 
+.. raw:: latex
+
+   \RaggedRight
+
 .. note::
 
    This User Guide is under active development.

@@ -18,7 +18,9 @@ TimeTagger Modules User Guide
 
 .. raw:: latex
 
-   \chapter{Introduction}
+   \phantomsection
+   \addcontentsline{toc}{chapter}{Introduction}
+   \chapter*{Introduction}
 
 The compact `TimeTagger modules <https://www.cronologic.de/product/tdc-modules>`_ 
 from `cronologic <https://www.cronologic.de>`_ provide a practical solution 

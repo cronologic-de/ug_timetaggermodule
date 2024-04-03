@@ -52,4 +52,5 @@ online at `docs.cronologic.de <https://docs.cronologic.de>`_.
    
    overview
    techdata
+   revhistory
 

@@ -5,7 +5,7 @@ Size and Weight
 ---------------
 
 Dimensions:
-    TBA
+    30 :math:`\times` 40 :math:`\times` 5 mm
 
 Weight:
     TBA

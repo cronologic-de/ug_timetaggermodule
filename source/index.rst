@@ -45,8 +45,20 @@ This User Guide is also available as `PDF download
 The user guides of all products by cronologic GmbH & Co. KG are available 
 online at `docs.cronologic.de <https://docs.cronologic.de>`_.
 
-Module Overview
----------------
+.. the contraption below is to fix section numbering in the PDF output in the 
+   index page
+
+.. only:: html
+
+    Module Overview
+    ---------------
+
+.. raw:: latex
+
+   \phantomsection
+   \addcontentsline{toc}{section}{Module Overview}
+    \section*{Module Overview}
+
 `cronologic <https://www.cronologic.de>`_ offers multiple variants of the
 `TimeTagger4 <https://www.cronologic.de/product/timetagger>`_ boards, offering
 the following quantization (bin size):
@@ -76,19 +88,27 @@ Each of these variants is available as a modular version, as well, offering:
     is measured by the TDC. You can use any input channel of our module to 
     output these pulses.
 
-Features
---------
+.. only:: html
+
+    Features
+    --------
+
+.. raw:: latex
+
+   \phantomsection
+   \addcontentsline{toc}{section}{Features}
+    \section*{Features}
 
 - 4-channel common-start TDC module
 - Quantisation (measurement resolution): 100 to 800 ps
 - Double-pulse resolution: 2 :math:`\times` quantisation size
 - Dead time between groups: none
 - Minimum interval between starts: 3.2 ns
-- Up to 8000 Hits per Packet
+- Up to 8000 Hits per Packet
 - 5 to 0.625 GHz for bursts of up to 4096 starts
 - 5 to 0.625 GHits/s per channel for bursts of up to 3900 stops
 - 40 MHits/s per channel of sustained stops
-- 60 MHits/s over all channels of sustained stops
+- 60 MHits/s over all channels of sustained stops
 
 For an extensive overview of all features and functions, please refer to the
 `TimeTagger4 User Guide 

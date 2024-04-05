@@ -14,6 +14,6 @@ User Guide
     Initial release
     
 
-.. .. raw:: latex
+.. raw:: latex
 
-..     \includepdf[pages={2}]{titlepage.pdf}
+    \includepdf[pages=-]{TDC_Module_user_guide_back.pdf}

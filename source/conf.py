@@ -110,7 +110,7 @@ latex_elements = {
     """,
     "extraclassoptions": r"openany",
     "tableofcontents":r"\tableofcontents",
-    "maketitle": r"",
+    "maketitle": r"\includepdf[pages=-]{TDC_Module_user_guide_front.pdf}",
     "releasename": "Rev.",
     "makeindex": "",
     "printindex": "",
@@ -119,6 +119,8 @@ latex_theme = "manual" # manual (book class) or howto (article class)
 latex_additional_files = [
     "cronologicug.sty",
     "extraplaceins.sty",
+    "TDC_Module_user_guide_back.pdf",
+    "TDC_Module_user_guide_front.pdf",
 ]
 
 numfig = True

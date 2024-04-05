@@ -19,6 +19,7 @@ release = '0.0.1'
 
 extensions = [
     "sphinx.ext.autosectionlabel",
+    # "sphinxcontrib.kroki",
     # "breathe",
     # "sphinxcontrib.wavedrom",
 ]

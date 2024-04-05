@@ -119,6 +119,7 @@ For an extensive overview of all features and functions, please refer to the
    :numbered: 3
    :hidden:
    
+   hardware
    techdata
    revhistory
 

@@ -4,7 +4,7 @@ Hardware
 Overview
 --------
 
-.. figure:: _static/TDC-Module_top.png
+.. figure:: _static/TDC-module_top.png
 
     Top-view of a TimeTagger Module.
 

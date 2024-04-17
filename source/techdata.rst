@@ -5,10 +5,10 @@ Size and Weight
 ---------------
 
 Dimensions:
-    30 :math:`\times` 40 :math:`\times` 5 mm
+    30 :math:`\times` 40 :math:`\times` 5 mm
 
 Weight:
-    TBA
+    9 g
 
 TDC characteristics
 -------------------

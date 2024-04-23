@@ -30,6 +30,11 @@ Inputs and Outputs
 Pin Assignment
 --------------
 
+.. warning::
+
+    This user guide is under development. The Pin-Assignment below is subject
+    to change.
+
 JB1-Connector
 ^^^^^^^^^^^^^
 

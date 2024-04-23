@@ -79,6 +79,9 @@ h6 {
   font-size: 110%;
 }
 
+.table-wrapper {
+  font-size: var(--font-size--small);
+}
 .caption-number{
   font-weight: bold;
 }

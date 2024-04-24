@@ -123,6 +123,7 @@ latex_additional_files = [
     "TDC_Module_user_guide_back.pdf",
     "TDC_Module_user_guide_front.pdf",
 ]
+latex_table_style = []
 
 numfig = True
 numfig_format = {

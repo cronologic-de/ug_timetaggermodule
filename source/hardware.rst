@@ -27,6 +27,10 @@ Inputs and Outputs
 
 .. _pin assignment:
 
+.. raw:: latex
+
+    \clearpage
+
 Pin Assignment
 --------------
 
@@ -38,9 +42,15 @@ Pin Assignment
 JB1-Connector
 ^^^^^^^^^^^^^
 
+.. raw:: latex
+
+    \begingroup
+    \small
+
+.. tabularcolumns:: |R|L|L|L|C|R|L|L|L|
+
 .. table::
     :width: 100%
-    :widths: 15 1 1 15 1 15 1 1 15
 
     +----------------------+-----+-----+-----------------++------------+-----+-----+-----------------+
     | Name                 | Pin | Pin | Name            || Name       | Pin | Pin |  Name           |
@@ -98,14 +108,22 @@ JB1-Connector
     |                      |     |     |                 ||  GND       | F1  | F2  |   GND           |
     +----------------------+-----+-----+-----------------++------------+-----+-----+-----------------+
 
+.. raw:: latex
+
+    \endgroup
 
 JB2-Connector
 ^^^^^^^^^^^^^
 
+.. raw:: latex
+
+    \begingroup
+    \small
+
+.. tabularcolumns:: |R|L|L|L|C|R|L|L|L|
 
 .. table::
     :width: 100%
-    :widths: 15 1 1 15 1 15 1 1 15
 
     +------------------+-----+-----+----------------++-------------------+-----+-----+------------+
     | Name             | Pin | Pin | Name           || Name              | Pin | Pin | Name       |
@@ -162,6 +180,10 @@ JB2-Connector
     +------------------+-----+-----+----------------++-------------------+-----+-----+------------+
     |                  |     |     |                ||  GND              | F1  | F2  |   GND      |
     +------------------+-----+-----+----------------++-------------------+-----+-----+------------+
+
+.. raw:: latex
+
+    \endgroup
 
 PCIe Example Setup
 ------------------

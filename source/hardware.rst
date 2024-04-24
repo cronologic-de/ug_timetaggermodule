@@ -28,19 +28,14 @@ Inputs and Outputs
     TimeTagger Module.
 
 
-
-.. raw:: latex
-
-    \clearpage
-
-
 .. _sec signal standard:
 
 Signal Standards
 ----------------
 
-The superscript next to the signal names of Tables :numref:`%s<jb1 table>` 
-and :numref:`%s<jb2 table>` refer to the signal standard, as listed below.
+The superscript next to the signal names of the tables in
+:numref:`Sections %s<jb1 table>` and :numref:`%s<jb2 table>` refer to the
+signal standard, as listed below.
 
 :sup:`1`\ PCIe
     Signals correspond to the PCIe specifications.
@@ -68,12 +63,21 @@ Pin Assignment
     This user guide is under development. The Pin-Assignment below is subject
     to change.
 
-Tables :numref:`%s<jb1 table>` and :numref:`%s<jb2 table>` list the pin
-assignments of connectors JB1 and JB2 (see
+The tables in :numref:`Sections %s<jb1 table>` and :numref:`%s<jb2 table>` list
+the pin assignments of connectors JB1 and JB2 (see
 :numref:`Figure %s<fig underneath>`).
 
 Pins without labels are unused. Some signals are optional and do not have to 
 be connected, as is described in :numref:`Section %s<sec io>`.
+
+
+.. _jb1 table:
+
+Connector JB1
+^^^^^^^^^^^^^
+
+Pin assignment of the JB1 connector. The superscripts refer to the signal
+standard (see :numref:`Section %s<sec signal standard>`)
 
 .. raw:: latex
 
@@ -82,9 +86,7 @@ be connected, as is described in :numref:`Section %s<sec io>`.
 
 .. tabularcolumns:: |R|L|L|L|C|R|L|L|L|
 
-.. _jb1 table:
-
-.. table:: Pin assignment of the JB1 connector. The superscripts refer to the signal standard (see :numref:`Section %s<sec signal standard>`)
+.. table::
     :width: 100%
 
     +----------------------------+-----+-----+------------------------------++-----------------+-----+-----+---------------------+
@@ -148,6 +150,15 @@ be connected, as is described in :numref:`Section %s<sec io>`.
 
     \endgroup
 
+
+.. _jb2 table:
+
+Connector JB2
+^^^^^^^^^^^^^
+
+Pin assignment of the JB1 connector. The superscripts refer to the signal
+standard (see :numref:`Section %s<sec signal standard>`)
+
 .. raw:: latex
 
     \begingroup
@@ -155,9 +166,7 @@ be connected, as is described in :numref:`Section %s<sec io>`.
 
 .. tabularcolumns:: |R|L|L|L|C|R|L|L|L|
 
-.. _jb2 table:
-
-.. table:: Pin assignment of the JB1 connector. The superscripts refer to the signal standard (see :numref:`Section %s<sec signal standard>`)
+.. table::
     :width: 100%
 
     +------------------+-----+-----+--------------------------++-----------------------------+-----+-----+-----------------+

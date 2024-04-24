@@ -79,9 +79,15 @@ h6 {
   font-size: 110%;
 }
 
+table>caption {
+    font-size: var(--font-size--medium);
+    text-align: left
+}
+
 .table-wrapper {
   font-size: var(--font-size--small);
 }
+
 .caption-number{
   font-weight: bold;
 }

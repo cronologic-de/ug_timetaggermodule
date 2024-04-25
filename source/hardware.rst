@@ -4,17 +4,27 @@ Hardware
 Overview
 --------
 
+.. _fig top:
+
 .. figure:: _static/TDC-module_top.png
     :alt: TimeTagger Module Top
 
     Top-view of a TimeTagger Module.
 
+.. _fig bottom:
+
 .. _fig underneath:
-.. figure:: _static/TDC-Module_underneath.png
+.. figure:: _static/TDC-Module_underneath_labeled.png
     :alt: TimeTagger Module Bottom
 
     Bottom-view of a TimeTagger Module. For the pin assignment, see
     :numref:`Section %s<pin assignment>`.
+
+:numref:`Figures %s<fig top>` and :numref:`%s<fig bottom>` show the top and
+bottom view of the module.
+
+The TimeTagger Module is connected to a carrier board using two 
+B2B connectors Samtec Razor Beam\ :sup:`TM` LSHM-150 (JB1, JB2).
 
 .. _sec io:
 
@@ -27,7 +37,7 @@ Inputs and Outputs
     :alt: Block Diagram
 
     Block diagram giving an overview of the inputs and outputs of the
-    TimeTagger Module.
+    TimeTagger Module, respectively.
 
 :numref:`Figure %s<fig io diagram>` gives an overview of the required and
 optional input and output signals of the TimeTagger Module. The required

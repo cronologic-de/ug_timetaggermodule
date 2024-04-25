@@ -293,7 +293,19 @@ standard (see :numref:`Section %s<sec signal standard>`)
 PCIe Example Setup
 ------------------
 
+.. _fig example:
+
 .. figure:: _static/module_on_PCIe_board.png
     :alt: PCIe Board Setup
 
     Example setup of a TimeTagger Module on a PCIe board.
+
+:numref:`Figure %s<fig example>` shows a possible setup of the TimeTagger
+Module.
+
+- The PCIe 12 V supply a PSU with regulated 3.3 and 2.5 V outputs supplying
+  the TimeTagger Module with power.
+- The PCIe signals PERST_n, REFCLK, RX and TX are connected to the module.
+- A 150 MHz oscillator is connected to the module.
+- The COAX start and stop signals are discriminated and connected to the
+  module.

@@ -15,6 +15,11 @@ TDC characteristics
 Refer to the main `TimeTagge4 User Guide 
 <https://download.cronologic.de/TimeTagger/TimeTagger4_User_Guide.pdf>`_.
 
+.. _sec electrical characteristics:
+
+Electrical characteristics
+--------------------------
+TBA
 
 Information required by DIN EN 61010-1
 --------------------------------------

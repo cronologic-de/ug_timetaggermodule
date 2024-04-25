@@ -21,12 +21,73 @@ Overview
 Inputs and Outputs
 ------------------
 
+.. _fig io diagram:
+
 .. figure:: _static/diagram.*
     :alt: Block Diagram
 
     Block diagram giving an overview of the inputs and outputs of the
     TimeTagger Module.
 
+:numref:`Figure %s<fig io diagram>` gives an overview of the required and
+optional input and output signals of the TimeTagger Module. The required
+standards are listed in :numref:`Section %s<sec signal standard>`.
+
+Input Voltages
+^^^^^^^^^^^^^^
+
+VCC33 and VCC25
+    Input Voltages of 3.3 V and 2.5 V.
+
+Clocking
+^^^^^^^^
+
+PCIe_100M_CLK
+    PCIe clock signal
+
+TDC_150M_CLK
+    150 MHz clock signal provided by the user
+
+Main Signals
+^^^^^^^^^^^^
+
+PCIe_RX, PCIe_TX, PROG_n
+    PCIe signals
+
+START
+    The start (i.e., trigger) signal of the TimeTagger Module
+
+STOP
+    The four stop signals of the TimeTagger Module
+
+Optional Signals
+^^^^^^^^^^^^^^^^
+
+FAN_TACHO, FAN_PWM
+    Signals to control an optional fan
+
+PERST_n, PCIe_SMB, JTAG
+    PCIe signals
+
+LED
+    Signals controlling the state of the onboard LED
+
+TiGer, TiGer_OE
+    Output signal of the Timing Generator, and control signal enabling the 
+    TiGer output, respectively
+
+DAC_CTRL
+    Signals controlling two optional DACs
+
+CLK_CTRL
+    Signals controlling the user clock
+
+POWON
+    POWON goes high after the FPGA on the TimeTagger Module has been
+    succesfully configured
+
+DONE
+    TBA
 
 .. _sec signal standard:
 

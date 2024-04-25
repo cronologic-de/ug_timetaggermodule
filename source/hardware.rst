@@ -111,7 +111,7 @@ signal standard, as listed below.
     min. 3.2 V; max 3.4 V
 
 :sup:`5`\ VCC25
-    min. 2.4 V; max 2.5 V
+    min. 2.4 V; max 2.6 V
 
 
 .. _pin assignment:

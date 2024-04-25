@@ -16,20 +16,20 @@
 ]]>
 </style>
 <defs>
-<marker id="arrow_fwd" markerWidth="8.0" markerHeight="8.0" viewBox="0 0 8.0 8.0" refX="3.2" refY="4.0" orient="auto" markerUnits="userSpaceOnUse">
-<g transform="translate(-0.0,4.0)"><path d="M 0 -4 C 2 -1, 2 1, 0 4 L 8 0 z" stroke="none" fill="#000000"/>
+<marker id="arrow_back" markerWidth="8.0" markerHeight="8.0" viewBox="0 0 8.0 8.0" refX="4.8" refY="4.0" orient="auto" markerUnits="userSpaceOnUse">
+<g transform="translate(8.0,4.0)"><path d="M 0 -4 C -2 -1, -2 1, 0 4 L -8 0 z" stroke="none" fill="#000000"/>
 </g>
 </marker>
-<marker id="bubble" markerWidth="7.0" markerHeight="7.0" viewBox="0 0 7.0 7.0" refX="3.5" refY="3.5" orient="auto" markerUnits="userSpaceOnUse">
-<g transform="translate(3.5,3.5)"><ellipse cx="0.0" cy="0.0" rx="3.0" ry="3.0" stroke="#000000" fill="#FFFFFF" stroke-width="1"/>
+<marker id="arrow_fwd" markerWidth="8.0" markerHeight="8.0" viewBox="0 0 8.0 8.0" refX="3.2" refY="4.0" orient="auto" markerUnits="userSpaceOnUse">
+<g transform="translate(-0.0,4.0)"><path d="M 0 -4 C 2 -1, 2 1, 0 4 L 8 0 z" stroke="none" fill="#000000"/>
 </g>
 </marker>
 <marker id="clock" markerWidth="8.0" markerHeight="15.0" viewBox="0 0 8.0 15.0" refX="0.5" refY="7.5" orient="auto" markerUnits="userSpaceOnUse">
 <g transform="translate(0.5,7.5)"><path d="M 0 -7 L 0 7 L 7 0 z" stroke="#000000" fill="#FFFFFF" stroke-width="1"/>
 </g>
 </marker>
-<marker id="arrow_back" markerWidth="8.0" markerHeight="8.0" viewBox="0 0 8.0 8.0" refX="4.8" refY="4.0" orient="auto" markerUnits="userSpaceOnUse">
-<g transform="translate(8.0,4.0)"><path d="M 0 -4 C -2 -1, -2 1, 0 4 L -8 0 z" stroke="none" fill="#000000"/>
+<marker id="bubble" markerWidth="7.0" markerHeight="7.0" viewBox="0 0 7.0 7.0" refX="3.5" refY="3.5" orient="auto" markerUnits="userSpaceOnUse">
+<g transform="translate(3.5,3.5)"><ellipse cx="0.0" cy="0.0" rx="3.0" ry="3.0" stroke="#000000" fill="#FFFFFF" stroke-width="1"/>
 </g>
 </marker>
 </defs>

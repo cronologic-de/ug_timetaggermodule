@@ -91,8 +91,11 @@ Optional Signals
 FAN_TACHO, FAN_PWM
     Signals to control an optional fan
 
-PERST_n, PCIe_SMB, JTAG
+PERST_n, PCIe_SMB
     PCIe signals
+
+JTAG
+    Programming, debug, and probing port
 
 LED
     Signals controlling the state of the onboard LED

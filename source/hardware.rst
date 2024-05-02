@@ -8,6 +8,7 @@ Overview
 
 .. figure:: _static/TDC-module_top.png
     :alt: TimeTagger Module Top
+    :width: 40%
 
     Top-view of a TimeTagger Module.
 
@@ -16,15 +17,28 @@ Overview
 .. _fig underneath:
 .. figure:: _static/TDC-Module_underneath_labeled.png
     :alt: TimeTagger Module Bottom
+    :width: 40%
 
-    Bottom-view of a TimeTagger Module. For the pin assignment, see
-    :numref:`Section %s<pin assignment>`.
+    Bottom-view of a TimeTagger Module. For the pin assignment of connectors
+    JB1 and JB2, see :numref:`Section %s<pin assignment>`.
 
 :numref:`Figures %s<fig top>` and :numref:`%s<fig bottom>` show the top and
 bottom view of the module.
 
 The TimeTagger Module is connected to a carrier board using two 
 B2B connectors Samtec Razor Beam\ :sup:`TM` LSHM-150 (JB1, JB2).
+:numref:`Figure %s<fig connector placement>` shows the dimensions of the
+board as well as the positioning of the two B2B connectors.
+
+.. _fig connector placement:
+
+.. figure:: _static/TDC-Modul_connector-placement.png
+    :alt: TimeTagger Module Dimensions
+    :width: 50%
+
+    Dimensions of the module and placement of the B2B connectors and mounting
+    holes. All dimensions are in mm. Mating height with a standard connector
+    is 8 mm.
 
 .. _sec io:
 
@@ -35,6 +49,7 @@ Inputs and Outputs
 
 .. figure:: _static/diagram.*
     :alt: Block Diagram
+    :width: 50%
 
     Block diagram giving an overview of the inputs and outputs of the
     TimeTagger Module, respectively.

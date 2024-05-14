@@ -255,7 +255,7 @@ useful additional features.
         used to control the timing of the system with high precision. 
 
     **TiGer_OE[4:0]**
-        3.3 V CMOS output. Output Enable for the TiGer.
+        Single-ended 3.3 V CMOS output. Output Enable for the TiGer.
 
         On the TimeTagger4 boards, the connectors for the TiGer outputs are
         shared with the TDC inputs.
@@ -367,6 +367,8 @@ the pin assignments of connectors JB1 and JB2 (see
 Pins without labels are unused. Some signals are optional and do not have to 
 be connected, as is described in :numref:`Section %s<sec io>`.
 
+Pins that must not be connected are marked as DNC.
+
 
 .. _jb1 table:
 
@@ -423,9 +425,9 @@ standard (see :numref:`Section %s<sec signal standard>`)
     +----------------------------+-----+-----+------------------------------++-----------------+-----+-----+----------------------------+
     | PCIe_SMDAT\ :sup:`2`       | 33  | 34  | TiGer_STOP2\ :sup:`2`        || 3.3 V Testpin   | 83  | 84  | GND                        |
     +----------------------------+-----+-----+------------------------------++-----------------+-----+-----+----------------------------+
-    | reserved                   | 35  | 36  | TiGer_STOP1\ :sup:`2`        ||                 | 85  | 86  | JTAG_TDI\ :sup:`2`         |
+    | DNC                        | 35  | 36  | TiGer_STOP1\ :sup:`2`        ||                 | 85  | 86  | JTAG_TDI\ :sup:`2`         |
     +----------------------------+-----+-----+------------------------------++-----------------+-----+-----+----------------------------+
-    | reserved                   | 37  | 38  | TiGer_STOP2_OE\ :sup:`2`     ||                 | 87  | 88  | JTAG_TDO\ :sup:`2`         |
+    | DNC                        | 37  | 38  | TiGer_STOP2_OE\ :sup:`2`     ||                 | 87  | 88  | JTAG_TDO\ :sup:`2`         |
     +----------------------------+-----+-----+------------------------------++-----------------+-----+-----+----------------------------+
     | TiGer_STOP0_OE\ :sup:`2`   | 39  | 40  | TiGer_STOP3\ :sup:`2`        ||                 | 89  | 90  | JTAG_TCK\ :sup:`2`         |
     +----------------------------+-----+-----+------------------------------++-----------------+-----+-----+----------------------------+

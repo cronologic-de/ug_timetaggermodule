@@ -91,7 +91,7 @@ All these signals must be correctly connected to operate the TimeTagger
 Module.
 
 **PROG_n**
-    Single-ended 3.3V CMOS input.
+    3.3 V CMOS input.
 
     Strobe LOW for at least **XXX???** to initiated reloading of the FPGA
     firmware.
@@ -101,7 +101,7 @@ Module.
     When connected to 3.3 V, the firmware is only loaded once at power-up.
 
 **PERST_n**
-    Single-ended 3.3V CMOS input.
+    3.3 V CMOS input.
 
     Reset the PCIe core of the FPGA.
 
@@ -152,7 +152,7 @@ useful additional features.
     connected as described for each individual signal. Others can be left open.
 
 **PCIe_SMCLK, PCIe_SMDAT**
-    Single-ended 3.3 V CMOS signals for system management bus.
+    3.3 V CMOS signals for system management bus.
 
     Currently not supported by the driver and firmware.
 
@@ -177,22 +177,22 @@ useful additional features.
     [TODO Schaplanausschnitt rund um J13 des Schaltplans einfügen]
 
     **JTAG_TDI**
-        Single-ended 3.3 V CMOS input.
+        3.3 V CMOS input.
 
         Data from the JTAG controller to the FPGA.
 
     **JTAG_TDO**
-        Single-ended 3.3 V CMOS output.
+        3.3 V CMOS output.
 
         Data from the FPGA to the JTAG controller. 
 
     **JTAG_TMS**
-        Single-ended 3.3 V CMOS input.
+        3.3 V CMOS input.
 
         Control signal from the JTAG controller to the FPGA.
 
     **JTAG_TCK**
-        Single-ended 3.3 V CMOS intput.
+        3.3 V CMOS intput.
 
         Clock signal from the JTAG controller to the FPGA. 
 
@@ -211,7 +211,7 @@ useful additional features.
     could alternatively be connected to microcontroller inputs.
 
     **DONE**
-        Single-ended 3.3 V CMOS output.
+        3.3 V CMOS output.
 
         A high value indicates that the FPGA completed configuration.
         cronologic usually connects this to a red LED over a 220R series
@@ -221,13 +221,13 @@ useful additional features.
         configuration is immediately visible.
 
     **STAT_INITIALIZED**
-        Single-ended 3.3 V CMOS output.
+        3.3 V CMOS output.
 
         Is set to HIGH after the board is initialized by the driver.
         Is reset to LOW when the device is closed by the software.
 
     **STAT_CAPTURE[1:0]**
-        Single-ended 3.3 V CMOS output.
+        3.3 V CMOS output.
 
         Provide status information. These can be connected to 3.3 V via
         120R series resistor and an LED.  
@@ -249,13 +249,13 @@ useful additional features.
 
 **TiGer Signals**
     **TiGer[4:0]**
-        Single-ended 3.3 V CMOS output.
+        3.3 V CMOS output.
 
         These pins are controlled by the TiGer timing generator. They can be
         used to control the timing of the system with high precision. 
 
     **TiGer_OE[4:0]**
-        Single-ended 3.3 V CMOS output. Output Enable for the TiGer.
+        3.3 V CMOS output. Output Enable for the TiGer.
 
         On the TimeTagger4 boards, the connectors for the TiGer outputs are
         shared with the TDC inputs.
@@ -267,14 +267,72 @@ useful additional features.
         the TiGer signals usually can be routed directly to their sinks and
         the output enables can be left unconnected.
 
-**DAC_CTRL**
-    Signals controlling two optional DACs.
+**DAC Control**
+    The driver for the module supports controlling of two DAC8565
+    digital-to-analog converters to configure the input thresholds of the
+    discriminators and the oscillator control voltage.
 
-**CLK_CTRL**
-    Signals controlling the user clock.
+    In an embedded system, the same setup can be used. Alternatively, the
+    voltages can be controlled by a microcontroller or set to fixed voltages.
+    [TODO Link zur Herstellerseite des DACs]
+
+    DAC1 has OSC_VC on VOUTA and the discriminator threshold of the START
+    input on VOUTD.
+
+    DAC2 has the discriminator thresholds of the for stop channels on its
+    VOUTx outputs.
+
+    DAC3 is not supported yet. The enable is provided to allow future
+    versions with more channels. 
+
+    It is possible to change the meaning of the voltages. For example,
+    VOUTD of DAC1 can be used as a common threshold for all inputs.
+    But the driver will not know that and this voltage will be accessed by
+    the user as the START channel threshold.
+
+    **DAC_SYNC**
+        3.3 V CMOS output.
+
+        Connect to the overline(SYNC) pins of the DACs. Avoid stubs.
+
+    **DAC_SCLK**
+        3.3 V CMOS output.
+
+        Connect to the SCLK pins of the DACs. Avoid stubs.
+
+    **DAC_D**
+        3.3 V CMOS output.
+
+        Connect to the DIN pins of the DACs. Avoid stubs.
+
+    **DAC_RST_b**
+        3.3 V CMOS output.
+
+        Connect to the overline(RST) pins of the DACs. Avoid stubs.
+
+    **DAC_EN**
+        3.3 V CMOS output.
+
+        Connect to the overline(ENABLE) pin of the DAC with the same index.
+
+**BOARD[3:0]**
+    3.3 V CMOS output.
+
+    A bit pattern of 4 bits that is made visible in the driver API.
+
+    Can be used to communicate version or type information about the base
+    board to the software, in case it has to act differently for certain
+    variants.
+
+**TEMP_ALARM_b**
+    3.3 V CMOS output.
+
+    When set to LOW, the driver will report a temperature alarm. Can be
+    connected to the alarm output of a temperature sensor, to a
+    microcontroller, or can be connected to 3.3 V.
 
 **POWON**
-    Single-ended 3.3 V CMOS output.
+    3.3 V CMOS output.
 
     This signal is set to HIGH after all power supplies of the module are
     stable and the FPGA on the module is configured.

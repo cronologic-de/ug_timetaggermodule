@@ -151,25 +151,6 @@ useful additional features.
     Even when not in use, some of the optional signals must be correctly
     connected as described for each individual signal. Others can be left open.
 
-**FAN_TACHO**
-    Single-ended 3.3 V CMOS input.
-
-    This can be used to measure the speed of a
-    cooling fan with tacho output that might be used in the system. This
-    measurement will be provided by the driver. It can be used detect fan
-    failures and deactive the module or the system to prevent heat damage.
-
-    Depending on the fan used, a pullup of about 5 kΩ to 3.3 V and a 470 Ω
-    series resistor might be needed. The driver is assuming a fan that
-    creates **XXX???** pulses per revolution.
-
-**FAN_PWM**
-    Single-ended 3.3 V CMOS output.
-
-    Currently not supported by the driver and firmware.
-    Might provide a PWM signal in the future to control the fan speed.
-
-
 **PCIe_SMCLK, PCIe_SMDAT**
     Single-ended 3.3 V CMOS signals for system management bus.
 
@@ -287,10 +268,10 @@ useful additional features.
         the output enables can be left unconnected.
 
 **DAC_CTRL**
-    Signals controlling two optional DACs
+    Signals controlling two optional DACs.
 
 **CLK_CTRL**
-    Signals controlling the user clock
+    Signals controlling the user clock.
 
 **POWON**
     Single-ended 3.3 V CMOS output.
@@ -442,9 +423,9 @@ standard (see :numref:`Section %s<sec signal standard>`)
     +----------------------------+-----+-----+------------------------------++-----------------+-----+-----+----------------------------+
     | PCIe_SMDAT\ :sup:`2`       | 33  | 34  | TiGer_STOP2\ :sup:`2`        || 3.3 V Testpin   | 83  | 84  | GND                        |
     +----------------------------+-----+-----+------------------------------++-----------------+-----+-----+----------------------------+
-    | FAN_PWM\ :sup:`2`          | 35  | 36  | TiGer_STOP1\ :sup:`2`        ||                 | 85  | 86  | JTAG_TDI\ :sup:`2`         |
+    | reserved                   | 35  | 36  | TiGer_STOP1\ :sup:`2`        ||                 | 85  | 86  | JTAG_TDI\ :sup:`2`         |
     +----------------------------+-----+-----+------------------------------++-----------------+-----+-----+----------------------------+
-    | FAN_TACHO\ :sup:`2`        | 37  | 38  | TiGer_STOP2_OE\ :sup:`2`     ||                 | 87  | 88  | JTAG_TDO\ :sup:`2`         |
+    | reserved                   | 37  | 38  | TiGer_STOP2_OE\ :sup:`2`     ||                 | 87  | 88  | JTAG_TDO\ :sup:`2`         |
     +----------------------------+-----+-----+------------------------------++-----------------+-----+-----+----------------------------+
     | TiGer_STOP0_OE\ :sup:`2`   | 39  | 40  | TiGer_STOP3\ :sup:`2`        ||                 | 89  | 90  | JTAG_TCK\ :sup:`2`         |
     +----------------------------+-----+-----+------------------------------++-----------------+-----+-----+----------------------------+
@@ -560,7 +541,8 @@ Module.
 
 - The PCIe 12 V supply a PSU with regulated 3.3 and 2.5 V outputs supplying
   the TimeTagger Module with power.
-- The PCIe signals PERST_n, REFCLK, RX and TX are connected to the module.
+- The PCIe signals PROG_n, PERST_n, PCIe_100M_CLK, PCIe_RX and PCIe_TX are
+  connected to the module.
 - A 150 MHz oscillator is connected to the module.
 - The COAX start and stop signals are discriminated and connected to the
   module.

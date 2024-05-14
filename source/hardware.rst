@@ -93,7 +93,7 @@ Module.
 **PROG_n**
     Single-ended 3.3V CMOS input.
 
-    Strobe low for at least **XXX???** to initiated reloading of the FPGA
+    Strobe LOW for at least **XXX???** to initiated reloading of the FPGA
     firmware.
 
     In a PCIe-CEM system this should be connected to the PERST_n pin of the
@@ -109,7 +109,7 @@ Module.
     from the edge connector. In an embedded system the requirements can vary,
     but it could be controlled my a microcontroller output.
 
-    Timing should comply to the PCIe-CEM specification. 
+    Timing should comply to the PCIe_CEM specification. 
 
 **PCIe_TX[3:0]**
     Differential PCIe output signals to transmit packets from the
@@ -309,7 +309,7 @@ The superscript next to the signal names of the tables in
 signal standard, as listed below.
 
 :sup:`1`\ PCIe
-    Differential signals compliant with the PCIe standard.
+    Differential signals compliant with the PCIe_CEM standard.
 
 :sup:`2`\ LVCMOS33
     For input signals, V\ :sub:`IL` and V\ :sub:`IH` specify the 

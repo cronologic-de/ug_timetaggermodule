@@ -91,7 +91,7 @@ All these signals must be correctly connected to operate the TimeTagger
 Module.
 
 **PROG_n**
-    3.3V CMOS input.
+    Single-ended 3.3V CMOS input.
 
     Strobe low for at least **XXX???** to initiated reloading of the FPGA
     firmware.
@@ -101,11 +101,11 @@ Module.
     When connected to 3.3 V, the firmware is only loaded once at power-up.
 
 **PERST_n**
-    3.3V CMOS input.
+    Single-ended 3.3V CMOS input.
 
     Reset the PCIe core of the FPGA.
 
-    In a PCIe_CEM system this should be connected to the corresponding signal
+    In a PCIe_CEM system, this should be connected to the corresponding signal
     from the edge connector. In an embedded system the requirements can vary,
     but it could be controlled my a microcontroller output.
 
@@ -173,7 +173,7 @@ useful additional features.
 **PCIe_SMCLK, PCIe_SMDAT**
     Single-ended 3.3 V CMOS signals for system management bus.
 
-    Currently no supported by the driver and firmware.
+    Currently not supported by the driver and firmware.
 
     Can be connected to the corresponding signals on a PCIe_CEM connector
     with the 470R series resistor or can be left floating.
@@ -245,7 +245,7 @@ useful additional features.
         Is set to HIGH after the board is initialized by the driver.
         Is reset to LOW when the device is closed by the software.
 
-    **STAT_CAPTURED[1:0]**
+    **STAT_CAPTURE[1:0]**
         Single-ended 3.3 V CMOS output.
 
         Provide status information. These can be connected to 3.3 V via
@@ -328,7 +328,7 @@ The superscript next to the signal names of the tables in
 signal standard, as listed below.
 
 :sup:`1`\ PCIe
-    Signals correspond to the PCIe specifications.
+    Differential signals compliant with the PCIe standard.
 
 :sup:`2`\ LVCMOS33
     For input signals, V\ :sub:`IL` and V\ :sub:`IH` specify the 
@@ -450,13 +450,13 @@ standard (see :numref:`Section %s<sec signal standard>`)
     +----------------------------+-----+-----+------------------------------++-----------------+-----+-----+----------------------------+
     | TiGer_START_OE\ :sup:`2`   | 41  | 42  | TiGer_STOP3_OE\ :sup:`2`     ||                 | 91  | 92  | JTAG_TMS\ :sup:`2`         |
     +----------------------------+-----+-----+------------------------------++-----------------+-----+-----+----------------------------+
-    | TiGer_STOP0\ :sup:`2`      | 43  | 44  |                              ||                 | 93  | 94  |  PROG_n\ :sup:`1`          |
+    | TiGer_STOP0\ :sup:`2`      | 43  | 44  |                              ||                 | 93  | 94  |  PROG_n\ :sup:`2`          |
     +----------------------------+-----+-----+------------------------------++-----------------+-----+-----+----------------------------+
     | TiGer_START\ :sup:`2`      | 45  | 46  |                              || GND             | 95  | 96  |  DONE\ :sup:`2`            |
     +----------------------------+-----+-----+------------------------------++-----------------+-----+-----+----------------------------+
     | GND                        | 47  | 48  |  GND                         || VCC33\ :sup:`4` | 97  | 98  |   GND                      |
     +----------------------------+-----+-----+------------------------------++-----------------+-----+-----+----------------------------+
-    | PERST_n\ :sup:`1`          | 49  | 50  |                              || VCC33\ :sup:`4` | 99  | 100 |  GND                       |
+    | PERST_n\ :sup:`2`          | 49  | 50  |                              || VCC33\ :sup:`4` | 99  | 100 |  GND                       |
     +----------------------------+-----+-----+------------------------------++-----------------+-----+-----+----------------------------+
     |                            |     |     |                              ||  GND            | F1  | F2  |   GND                      |
     +----------------------------+-----+-----+------------------------------++-----------------+-----+-----+----------------------------+

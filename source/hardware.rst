@@ -231,6 +231,7 @@ useful additional features.
         3.3 V CMOS output.
 
         Is set to HIGH after the board is initialized by the driver.
+
         Is reset to LOW when the device is closed by the software.
 
     **STAT_CAPTURE[1:0]**

@@ -73,6 +73,10 @@ implementation are given in the sections below.
 Inputs and Outputs
 ------------------
 
+:numref:`Figure %s<fig io diagram>` gives an overview of the required and
+optional input and output signals of the TimeTagger Module. The required
+standards are listed in :numref:`Section %s<sec signal standard>`.
+
 .. _fig io diagram:
 
 .. figure:: _static/diagram.*
@@ -81,10 +85,6 @@ Inputs and Outputs
 
     Block diagram giving an overview of the inputs and outputs of the
     TimeTagger Module, respectively.
-
-:numref:`Figure %s<fig io diagram>` gives an overview of the required and
-optional input and output signals of the TimeTagger Module. The required
-standards are listed in :numref:`Section %s<sec signal standard>`.
 
 Input Voltages
 ^^^^^^^^^^^^^^

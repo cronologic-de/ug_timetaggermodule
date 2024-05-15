@@ -47,6 +47,27 @@ board as well as the positioning of the two B2B connectors.
     holes. All dimensions are in mm. Mating height with a standard connector
     is 8 mm.
 
+:numref:`Figure %s<fig example>` shows the principle of how the TimeTagger
+Module may be implemented on a PCIe carrier board.
+Note that it only gives an overview of a possible setup. Details for the
+implementation are given in the sections below.
+
+- The PCIe 12 V supply a PSU with regulated 3.3 and 2.5 V outputs supplying
+  the TimeTagger Module with power.
+- The TimeTagger Module communicates with the computer via PCIe.
+- A 150 MHz oscillator is connected to the module.
+- The COAX start and stop signals are discriminated and connected to the
+  module.
+
+.. _fig example:
+
+.. figure:: _static/module_on_PCIe_board.png
+    :alt: PCIe Board Setup
+    :width: 80%
+
+    Example setup of a TimeTagger Module on a PCIe board.
+
+
 .. _sec io:
 
 Inputs and Outputs
@@ -609,24 +630,3 @@ standard (see :numref:`Section %s<sec signal standard>`)
 .. raw:: latex
 
     \endgroup
-
-PCIe Example Setup
-------------------
-
-.. _fig example:
-
-.. figure:: _static/module_on_PCIe_board.png
-    :alt: PCIe Board Setup
-
-    Example setup of a TimeTagger Module on a PCIe board.
-
-:numref:`Figure %s<fig example>` shows a possible setup of the TimeTagger
-Module.
-
-- The PCIe 12 V supply a PSU with regulated 3.3 and 2.5 V outputs supplying
-  the TimeTagger Module with power.
-- The PCIe signals PROG_n, PERST_n, PCIe_100M_CLK, PCIe_RX and PCIe_TX are
-  connected to the module.
-- A 150 MHz oscillator is connected to the module.
-- The COAX start and stop signals are discriminated and connected to the
-  module.

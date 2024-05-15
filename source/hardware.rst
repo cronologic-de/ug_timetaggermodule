@@ -276,13 +276,13 @@ useful additional features.
         the output enables can be left unconnected.
 
 **DAC Control**
-    The driver for the module supports controlling of two DAC8565
+    The driver for the module supports controlling of two
+    `DAC8565 <https://www.ti.com/product/DAC8565>`_
     digital-to-analog converters to configure the input thresholds of the
     discriminators and the oscillator control voltage.
 
     In an embedded system, the same setup can be used. Alternatively, the
     voltages can be controlled by a microcontroller or set to fixed voltages.
-    [TODO Link zur Herstellerseite des DACs]
 
     DAC1 has OSC_VC on VOUTA and the discriminator threshold of the START
     input on VOUTD.

@@ -155,8 +155,9 @@ useful additional features.
 
 .. attention::
 
-    Even when not in use, some of the optional signals must be correctly
-    connected as described for each individual signal. Others can be left open.
+    Even if not in use, JTAG_TCK and TEMP_ALARM_n have to be connected
+    correctly. See the descriptions of these signals.
+
 
 **PCIe_SMCLK, PCIe_SMDAT**
     3.3 V CMOS signals for system management bus.
@@ -173,15 +174,21 @@ useful additional features.
     update the firmware over PCIe.
 
     However, we recommend to implement a JTAG connector anyway if space is
-    available, to simplify debugging of the base board.
+    available, to simplify debugging of the base board. See 
+    :numref:`Figure %s<fig jtag circuit diagram>` for the implementation.
 
     There are various JTAG cables for FPGA development available.
-    The following circuit is compatible to the cables provide by
-    Trenz Electronic.
+    The following circuit is compatible to the JTAG-HS2 Programming Cable
+    by Digilent, provided, e.g., by
+    `trenz electronic <https://shop.trenz-electronic.de/de/24624-JTAG-HS2-Programmierkabel>`_.
 
-    [TODO Link zum Kabel und Kabelbezeichnung einfügen]
+    .. _fig jtag circuit diagram:
 
-    [TODO Schaplanausschnitt rund um J13 des Schaltplans einfügen]
+    .. figure:: _static/J13_circuit_diagram.png
+        :width: 50%
+        :alt: JTAG circuit diagram
+
+        Circuit diagram for a JTAG connector.
 
     **JTAG_TDI**
         3.3 V CMOS input.

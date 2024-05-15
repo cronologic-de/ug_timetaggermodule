@@ -100,3 +100,7 @@ table>caption {
 figcaption {
   padding-bottom: 2.25em;
 }
+
+overline {
+  text-decoration: overline;
+}

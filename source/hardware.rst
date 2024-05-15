@@ -100,7 +100,7 @@ Module.
 **PROG_n**
     3.3 V CMOS input.
 
-    Strobe LOW for at least **XXX???** to initiated reloading of the FPGA
+    Strobe LOW for at least TBA to initiated reloading of the FPGA
     firmware.
 
     In a PCIe-CEM system this should be connected to the PERST_n pin of the

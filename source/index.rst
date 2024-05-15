@@ -59,16 +59,9 @@ online at `docs.cronologic.de <https://docs.cronologic.de>`_.
    \addcontentsline{toc}{section}{Module Overview}
     \section*{Module Overview}
 
-`cronologic <https://www.cronologic.de>`_ offers multiple variants of the
-`TimeTagger4 <https://www.cronologic.de/product/timetagger>`_ boards, offering
-the following quantization (bin size):
-
-- **TimeTagger4-1.25G**:  800 ps
-- **TimeTagger4-2.5G**:   400 ps
-- **TimeTagger4-5G**:     200 ps
-- **TimeTagger4-10G**:    100 ps
-
-Each of these variants is available as a modular version, as well, offering:
+`cronologic <https://www.cronologic.de>`_ offers the 
+`TimeTagger4-10G <https://www.cronologic.de/product/timetagger>`_ boards
+as a modular version, as well, providing:
 
 **Space-saving installation**
     All TimeTagger modules can be installed via board-to-board connectors with 
@@ -97,11 +90,11 @@ Each of these variants is available as a modular version, as well, offering:
 
    \phantomsection
    \addcontentsline{toc}{section}{Features}
-    \section*{Features}
+   \section*{Features}
 
 - 4-channel common-start TDC module
-- Quantisation (measurement resolution): 100 to 800 ps
-- Double-pulse resolution: 2 :math:`\times` quantisation size
+- Quantisation (measurement resolution): 100 ps
+- Double-pulse resolution: 200 ps
 - Dead time between groups: none
 - Minimum interval between starts: 3.2 ns
 - Up to 8000 Hits per Packet

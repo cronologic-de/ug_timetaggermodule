@@ -72,7 +72,7 @@ Clocking
     with regards to signaling levels and jitter.
 
     This must be synchronous to the clock of the PCIe host connected to the
-    module. It can be taken directly from the clock of a PCIe-CEM connector.
+    module. It can be taken directly from the clock of a PCIe_CEM connector.
 
     100 nF decoupling capacitors should be placed in series of this signal to
     implement AC coupling.
@@ -82,7 +82,7 @@ Clocking
     either synchronous or asynchronous to PCIe_100M_CLK.
 
     The quality of this clock effects the measurement accuracy of the TDC, so
-    a low jitter clock source must be used. Spread-spectrum clocking should be
+    a low-jitter clock source must be used. Spread-spectrum clocking should be
     disabled for this signal.
 
 Main Signals
@@ -345,7 +345,7 @@ Routing of Differential Signals
 -------------------------------
 
 All differential signals on the board are high speed signals that must be
-carefully routed to provide good signal integrity.
+routed carefully to provide good signal integrity.
 
 The routing can either be done as a coupled pair with 100 Ω differential
 impedance or as two independent wires with 50 Ω single ended impedance.
@@ -367,7 +367,8 @@ The superscript next to the signal names of the tables in
 signal standard, as listed below.
 
 :sup:`1`\ PCIe
-    Differential signals compliant with the PCIe_CEM standard.
+    Differential signals with an impedance of 100 Ω compliant with the
+    PCIe_CEM standard.
 
 :sup:`2`\ LVCMOS33
     For input signals, V\ :sub:`IL` and V\ :sub:`IH` specify the 
@@ -387,7 +388,7 @@ signal standard, as listed below.
 
 :sup:`3`\ LVDS
     V\ :sub:`IDIFF` is the differential input voltage (U - Ū), where U is HIGH
-    [or (Ū - U), where Ū is high]. The input impedance is 100 Ω differential.
+    [or (Ū - U), where Ū is HIGH]. The input impedance is 100 Ω differential.
 
 .. table::
     :width: 100%

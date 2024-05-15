@@ -316,7 +316,7 @@ useful additional features.
 
         Connect to the DIN pins of the DACs. Avoid stubs.
 
-    **DAC_RST_b**
+    **DAC_RST_n**
         3.3 V CMOS output.
 
         Connect to the
@@ -341,7 +341,7 @@ useful additional features.
     board to the software, in case it has to act differently for certain
     variants.
 
-**TEMP_ALARM_b**
+**TEMP_ALARM_n**
     3.3 V CMOS output.
 
     When set to LOW, the driver will report a temperature alarm. Can be

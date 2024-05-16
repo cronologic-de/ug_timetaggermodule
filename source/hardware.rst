@@ -181,7 +181,7 @@ Reset the PCIe core of the FPGA.
 
 In a PCIe_CEM system, this should be connected to the corresponding signal
 from the edge connector. In an embedded system the requirements can vary,
-but it could be controlled my a microcontroller output.
+but it could be controlled by a microcontroller output.
 
 Timing should comply to the PCIe_CEM specification. 
 
@@ -583,21 +583,33 @@ signal standard, as listed below.
 
     For output signals, V\ :sub:`OL` and V\ :sub:`OH` specify the output
     voltage of LOW and HIGH, respectively.
+
+.. raw:: html
+
+    <div class="indent1">
     
 .. table::
     :width: 100%
 
-    +------------------+------------------+------------------+------------------+------------------+------------------+
-    | V\ :sub:`IL,min` | V\ :sub:`IL,max` | V\ :sub:`IH,max` | V\ :sub:`IH,max` | V\ :sub:`OL,max` | V\ :sub:`OH,min` | 
-    +==================+==================+==================+==================+==================+==================+
-    | −0.3 V           | 0.8 V            | 2.0 V            | 3.45 V           | 0.4 V            | 2.9 V            |
-    +------------------+------------------+------------------+------------------+------------------+------------------+
+    +------------------+------------------+------------------+------------------+------------------+------------------+------------------+-----------------+
+    | V\ :sub:`IL,min` | V\ :sub:`IL,max` | V\ :sub:`IH,max` | V\ :sub:`IH,max` | V\ :sub:`OL,max` | V\ :sub:`OH,min` | I\ :sub:`OL,max` | I\ :sub:`OH,min`|
+    +==================+==================+==================+==================+==================+==================+==================+=================+
+    | −0.3 V           | 0.8 V            | 2.0 V            | 3.45 V           | 0.4 V            | 2.9 V            | 11 mA            | −11 mA          |
+    +------------------+------------------+------------------+------------------+------------------+------------------+------------------+-----------------+
+
+.. raw:: html
+
+    </div>
 
 :sup:`3`\ LVDS
     In the table below, V\ :sub:`IDIFF` is the differential input voltage
     (U - Ū), where U is HIGH [or (Ū - U), where Ū is HIGH].
     V\ :sub:`ICM` is the input common-mode voltage.
     The input impedance is 100 Ω differential.
+
+.. raw:: html
+
+    <div class="indent1">
 
 .. table::
     :width: 100%
@@ -609,6 +621,11 @@ signal standard, as listed below.
     +-----------------+-----+---------+-----+------+ 
     | V\ :sub:`ICM`   | 0.3 | 1.2     | 1.5 | V    |
     +-----------------+-----+---------+-----+------+
+
+.. raw:: html
+
+    </div>
+
 
 :sup:`4`\ VCC33
     min. 3.2 V; max 3.4 V

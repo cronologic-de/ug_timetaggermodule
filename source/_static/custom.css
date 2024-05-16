@@ -72,11 +72,15 @@ h2 {
   font-size: 130%;
 }
 
-h3,
+h3 {
+  font-size: 110%;
+}
+
 h4,
 h5,
 h6 {
-  font-size: 110%;
+  font-size: 100%;
+  color: var(--color-foreground-primary);
 }
 
 table>caption {
@@ -103,4 +107,8 @@ figcaption {
 
 overline {
   text-decoration: overline;
+}
+
+div.indent1 {
+  margin-left: 40px;
 }

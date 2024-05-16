@@ -89,85 +89,139 @@ standards are listed in :numref:`Section %s<sec signal standard>`.
 Input Voltages
 ^^^^^^^^^^^^^^
 
-**VCC33** and **VCC25**
-    Input Voltages of 3.3 V and 2.5 V.
+VCC33 and VCC25
+***************
+
+:raw-html:`<div class="indent1">`
+
+Input Voltages of 3.3 V and 2.5 V.
+
+:raw-html:`</div>`
 
 Clocking
 ^^^^^^^^
 
-**PCIe_100M_CLK**
-    A differential 100 MHz clock that complies with PCIe clock specifications
-    with regards to signaling levels and jitter.
+PCIe_100M_CLK
+**************
 
-    This must be synchronous to the clock of the PCIe host connected to the
-    module. It can be taken directly from the clock of a PCIe_CEM connector.
+:raw-html:`<div class="indent1">`
 
-    100 nF decoupling capacitors should be placed in series of this signal to
-    implement AC coupling.
+A differential 100 MHz clock that complies with PCIe clock specifications
+with regards to signaling levels and jitter.
 
-**TDC_150M_CLK**
-    A differential LVDS clock signal with 150 MHz freqeuency. This can be
-    either synchronous or asynchronous to PCIe_100M_CLK.
+This must be synchronous to the clock of the PCIe host connected to the
+module. It can be taken directly from the clock of a PCIe_CEM connector.
 
-    The quality of this clock effects the measurement accuracy of the TDC, so
-    a low-jitter clock source must be used. Spread-spectrum clocking should be
-    disabled for this signal.
+100 nF decoupling capacitors should be placed in series of this signal to
+implement AC coupling.
+
+:raw-html:`</div>`
+
+TDC_150M_CLK
+************
+
+:raw-html:`<div class="indent1">`
+
+A differential LVDS clock signal with 150 MHz freqeuency. This can be
+either synchronous or asynchronous to PCIe_100M_CLK.
+
+The quality of this clock effects the measurement accuracy of the TDC, so
+a low-jitter clock source must be used. Spread-spectrum clocking should be
+disabled for this signal.
+
+:raw-html:`</div>`
 
 Main Signals
 ^^^^^^^^^^^^
 All these signals must be correctly connected to operate the TimeTagger
 Module.
 
-**PROG_n**
-    3.3 V CMOS input.
+PROG_n
+******
 
-    Strobe LOW for at least TBA to initiated reloading of the FPGA
-    firmware.
+:raw-html:`<div class="indent1">`
 
-    In a PCIe-CEM system this should be connected to the PERST_n pin of the
-    connector and provided with a 5 kΩ pull-up to 3.3 V.
-    When connected to 3.3 V, the firmware is only loaded once at power-up.
+3.3 V CMOS input.
 
-**PERST_n**
-    3.3 V CMOS input.
+Strobe LOW for at least TBA to initiated reloading of the FPGA
+firmware.
 
-    Reset the PCIe core of the FPGA.
+In a PCIe-CEM system this should be connected to the PERST_n pin of the
+connector and provided with a 5 kΩ pull-up to 3.3 V.
+When connected to 3.3 V, the firmware is only loaded once at power-up.
 
-    In a PCIe_CEM system, this should be connected to the corresponding signal
-    from the edge connector. In an embedded system the requirements can vary,
-    but it could be controlled my a microcontroller output.
+:raw-html:`</div>`
 
-    Timing should comply to the PCIe_CEM specification. 
+PERST_n
+*******
 
-**PCIe_TX[3:0]**
-    Differential PCIe output signals to transmit packets from the
-    TimeTagger Module to the host. Compliant to PCIe standards.
-    The _P and _N signals of each pair can be flipped to simplify routing.
+:raw-html:`<div class="indent1">`
 
-    The PCIe protocol will detect and correct the inversion.
+3.3 V CMOS input.
 
-    Lanes 0 to 3, or lanes 0 and 1, or only lane 0 can be connected to the
-    host. The ordering of lanes can be reversed to simplify routing. 
+Reset the PCIe core of the FPGA.
 
-**PCIe_RX[3:0]**
-    Same as PCIe_TX but an input for receiving packets from the host at the
-    module.
-    100 nF decoupling capacitors must be placed in series to these signals.
+In a PCIe_CEM system, this should be connected to the corresponding signal
+from the edge connector. In an embedded system the requirements can vary,
+but it could be controlled my a microcontroller output.
 
-**START**
-    Differential LVDS input to start a TDC measurement. If single ended
-    signals or small scale signals shall be processed, a discriminator must be
-    implemented.
+Timing should comply to the PCIe_CEM specification. 
 
-    This signal must not be left floating and should always be in a well
-    defined LOW or HIGH state.
+:raw-html:`</div>`
 
-**STOP[3:0]**
-    Differential LVDS input to create a time measurement on the respective
-    channel.
+PCIe_TX[3:0]
+************
 
-    This signal must not be left floating and should always be in a well
-    defined LOW or HIGH state.
+:raw-html:`<div class="indent1">`
+
+Differential PCIe output signals to transmit packets from the
+TimeTagger Module to the host. Compliant to PCIe standards.
+The _P and _N signals of each pair can be flipped to simplify routing.
+
+The PCIe protocol will detect and correct the inversion.
+
+Lanes 0 to 3, or lanes 0 and 1, or only lane 0 can be connected to the
+host. The ordering of lanes can be reversed to simplify routing. 
+
+:raw-html:`</div>`
+
+PCIe_RX[3:0]
+************
+
+:raw-html:`<div class="indent1">`
+
+Same as PCIe_TX but an input for receiving packets from the host at the
+module.
+100 nF decoupling capacitors must be placed in series to these signals.
+
+:raw-html:`</div>`
+
+START
+*****
+
+:raw-html:`<div class="indent1">`
+
+Differential LVDS input to start a TDC measurement. If single ended
+signals or small scale signals shall be processed, a discriminator must be
+implemented.
+
+This signal must not be left floating and should always be in a well
+defined LOW or HIGH state.
+
+:raw-html:`</div>`
+
+STOP[3:0]
+*********
+
+:raw-html:`<div class="indent1">`
+
+Differential LVDS input to create a time measurement on the respective
+channel.
+
+This signal must not be left floating and should always be in a well
+defined LOW or HIGH state.
+
+:raw-html:`</div>`
 
 Optional Signals
 ^^^^^^^^^^^^^^^^
@@ -180,178 +234,213 @@ useful additional features.
     correctly. See the descriptions of these signals.
 
 
-**PCIe_SMCLK, PCIe_SMDAT**
-    3.3 V CMOS signals for system management bus.
+PCIe_SMCLK and PCIe_SMDAT
+*************************
 
-    Currently not supported by the driver and firmware.
+:raw-html:`<div class="indent1">`
 
-    Can be connected to the corresponding signals on a PCIe_CEM connector
-    with the 470 Ω series resistor or can be left floating.
+3.3 V CMOS signals for system management bus.
 
-**JTAG signals**
-    The JTAG port for debugging, reflashing and interactive development of
-    the FPGA hardware. This usually is not required for a production system,
-    as the firmware delivered with the module provides the capability to
-    update the firmware over PCIe.
+Currently not supported by the driver and firmware.
 
-    However, we recommend to implement a JTAG connector anyway if space is
-    available, to simplify debugging of the base board. See 
-    :numref:`Figure %s<fig jtag circuit diagram>` for the implementation.
+Can be connected to the corresponding signals on a PCIe_CEM connector
+with the 470 Ω series resistor or can be left floating.
 
-    There are various JTAG cables for FPGA development available.
-    The following circuit is compatible to the JTAG-HS2 Programming Cable
-    by Digilent, provided, e.g., by
-    `trenz electronic <https://shop.trenz-electronic.de/de/24624-JTAG-HS2-Programmierkabel>`_.
+:raw-html:`</div>`
 
-    .. _fig jtag circuit diagram:
 
-    .. figure:: _static/J13_circuit_diagram.png
-        :width: 50%
-        :alt: JTAG circuit diagram
+JTAG signals
+************
 
-        Circuit diagram for a JTAG connector.
+:raw-html:`<div class="indent1">`
 
-    **JTAG_TDI**
-        3.3 V CMOS input.
+The JTAG port for debugging, reflashing and interactive development of
+the FPGA hardware. This usually is not required for a production system,
+as the firmware delivered with the module provides the capability to
+update the firmware over PCIe.
 
-        Data from the JTAG controller to the FPGA.
+However, we recommend to implement a JTAG connector anyway if space is
+available, to simplify debugging of the base board. See 
+:numref:`Figure %s<fig jtag circuit diagram>` for the implementation.
 
-    **JTAG_TDO**
-        3.3 V CMOS output.
+There are various JTAG cables for FPGA development available.
+The following circuit is compatible to the JTAG-HS2 Programming Cable
+by Digilent, provided, e.g., by
+`trenz electronic <https://shop.trenz-electronic.de/de/24624-JTAG-HS2-Programmierkabel>`_.
 
-        Data from the FPGA to the JTAG controller. 
+.. _fig jtag circuit diagram:
 
-    **JTAG_TMS**
-        3.3 V CMOS input.
+.. figure:: _static/J13_circuit_diagram.png
+    :width: 50%
+    :alt: JTAG circuit diagram
 
-        Control signal from the JTAG controller to the FPGA.
+    Circuit diagram for a JTAG connector.
 
-    **JTAG_TCK**
-        3.3 V CMOS intput.
+**JTAG_TDI**
+    3.3 V CMOS input.
 
-        Clock signal from the JTAG controller to the FPGA. 
+    Data from the JTAG controller to the FPGA.
 
-        If JTAG is used, a 50 Ω termination close to the FPGA module is
-        required.
+**JTAG_TDO**
+    3.3 V CMOS output.
 
-        Otherwise, if JTAG is not used, this signal must be tied to GND
-        or 3.3 V.
+    Data from the FPGA to the JTAG controller. 
 
-**Status Signals**
-    There are four signals provided that can be used to provide information
-    about the module status.
+**JTAG_TMS**
+    3.3 V CMOS input.
 
-    In the original TimeTagger4 base boards, these signals are connected to
-    LEDs to provide visual feedback to the user. In an embedded system they
-    could alternatively be connected to microcontroller inputs.
+    Control signal from the JTAG controller to the FPGA.
 
-    **DONE**
-        3.3 V CMOS output.
+**JTAG_TCK**
+    3.3 V CMOS intput.
 
-        A high value indicates that the FPGA completed configuration.
-        cronologic usually connects this to a red LED over a 220 Ω series
-        resistor.
+    Clock signal from the JTAG controller to the FPGA. 
 
-        The LED is lighting up during configuration so that a failed
-        configuration is immediately visible.
+    If JTAG is used, a 50 Ω termination close to the FPGA module is
+    required.
 
-    **STAT_INITIALIZED**
-        3.3 V CMOS output.
+    Otherwise, if JTAG is not used, this signal must be tied to GND
+    or 3.3 V.
 
-        Is set to HIGH after the board is initialized by the driver.
+:raw-html:`</div>`
 
-        Is reset to LOW when the device is closed by the software.
+Status Signals
+**************
 
-    **STAT_CAPTURE[1:0]**
-        3.3 V CMOS output.
+:raw-html:`<div class="indent1">`
 
-        Provide status information. These can be connected to 3.3 V via
-        120 Ω series resistor and an LED.  
+There are four signals provided that can be used to provide information
+about the module status.
 
-        STAT_CAPTURE[0] is set HIGH when the driver is in the capturing state.
+In the original TimeTagger4 base boards, these signals are connected to
+LEDs to provide visual feedback to the user. In an embedded system they
+could alternatively be connected to microcontroller inputs.
 
-        Then, STAT_CAPTURE[1] becomes HIGH when a first start pulse is
-        detected during capturing.
+**DONE**
+    3.3 V CMOS output.
 
-        These bits are sticky and stay HIGH until capturing is stopped,
-        with one exception: If missing groups are detected, STAT_CAPTURE[0]
-        becomes LOW and STAT_CAPTURE[1] becomes HIGH.
+    A high value indicates that the FPGA completed configuration.
+    cronologic usually connects this to a red LED over a 220 Ω series
+    resistor.
 
-        These pins can be connected to a dual-color LED that lights up, e.g.,
-        green when capture is started, yellow when start signals are detected,
-        and red when groups are missing. For this STAT_CAPTURE[0] should
-        light up the green LED and STAT_CAPTURE[1] should light up the
-        red LED.
+    The LED is lighting up during configuration so that a failed
+    configuration is immediately visible.
 
-**TiGer Signals**
-    **TiGer[4:0]**
-        3.3 V CMOS output.
+**STAT_INITIALIZED**
+    3.3 V CMOS output.
 
-        These pins are controlled by the TiGer timing generator. They can be
-        used to control the timing of the system with high precision. 
+    Is set to HIGH after the board is initialized by the driver.
 
-    **TiGer_OE[4:0]**
-        3.3 V CMOS output. Output Enable for the TiGer.
+    Is reset to LOW when the device is closed by the software.
 
-        On cronologic's TimeTagger4 boards, the connectors for the TiGer
-        outputs are shared with the TDC inputs.
+**STAT_CAPTURE[1:0]**
+    3.3 V CMOS output.
 
-        To facilitate this, tristate buffers close to the connector are used to
-        conditionally drive the TiGer signals to the connector.
+    Provide status information. These can be connected to 3.3 V via
+    120 Ω series resistor and an LED.  
 
-        The buffers are enabled when TiGer_OE is HIGH. In an embedded system
-        the TiGer signals usually can be routed directly to their sinks and
-        the output enables can be left unconnected.
+    STAT_CAPTURE[0] is set HIGH when the driver is in the capturing state.
 
-**DAC Control**
-    The driver for the module supports controlling of two
-    `DAC8565 <https://www.ti.com/product/DAC8565>`_
-    digital-to-analog converters to configure the input thresholds of the
-    discriminators and the oscillator control voltage.
+    Then, STAT_CAPTURE[1] becomes HIGH when a first start pulse is
+    detected during capturing.
 
-    In an embedded system, the same setup can be used. Alternatively, the
-    voltages can be controlled by a microcontroller or set to fixed voltages.
+    These bits are sticky and stay HIGH until capturing is stopped,
+    with one exception: If missing groups are detected, STAT_CAPTURE[0]
+    becomes LOW and STAT_CAPTURE[1] becomes HIGH.
 
-    DAC1 has OSC_VC on VOUTA and the discriminator threshold of the START
-    input on VOUTD.
+    These pins can be connected to a dual-color LED that lights up, e.g.,
+    green when capture is started, yellow when start signals are detected,
+    and red when groups are missing. For this STAT_CAPTURE[0] should
+    light up the green LED and STAT_CAPTURE[1] should light up the
+    red LED.
 
-    DAC2 has the discriminator thresholds of the for stop channels on its
-    VOUTx outputs.
+:raw-html:`</div>`
 
-    DAC3 is not supported yet. The enable is provided to allow future
-    versions with more channels. 
+TiGer Signals
+*************
 
-    It is possible to change the meaning of the voltages. For example,
-    VOUTD of DAC1 can be used as a common threshold for all inputs.
-    But the driver will not know that and this voltage will be accessed by
-    the user as the START channel threshold.
+:raw-html:`<div class="indent1">`
 
-    **DAC_SYNC**
-        3.3 V CMOS output.
+**TiGer[4:0]**
+    3.3 V CMOS output.
 
-        Connect to the SYNC_n pins of the DACs. Avoid stubs.
+    These pins are controlled by the TiGer timing generator. They can be
+    used to control the timing of the system with high precision. 
 
-    **DAC_SCLK**
-        3.3 V CMOS output.
+**TiGer_OE[4:0]**
+    3.3 V CMOS output. Output Enable for the TiGer.
 
-        Connect to the SCLK pins of the DACs. Avoid stubs.
+    On cronologic's TimeTagger4 boards, the connectors for the TiGer
+    outputs are shared with the TDC inputs.
 
-    **DAC_D**
-        3.3 V CMOS output.
+    To facilitate this, tristate buffers close to the connector are used to
+    conditionally drive the TiGer signals to the connector.
 
-        Connect to the DIN pins of the DACs. Avoid stubs.
+    The buffers are enabled when TiGer_OE is HIGH. In an embedded system
+    the TiGer signals usually can be routed directly to their sinks and
+    the output enables can be left unconnected.
 
-    **DAC_RST_n**
-        3.3 V CMOS output.
+:raw-html:`</div>`
 
-        Connect to the RST_n pins of the DACs. Avoid stubs.
+DAC Control
+***********
 
-    **DAC_EN**
-        3.3 V CMOS output.
+:raw-html:`<div class="indent1">`
 
-        Connect to the ENABLE_n pin of the DAC with the same index.
+The driver for the module supports controlling of two
+`DAC8565 <https://www.ti.com/product/DAC8565>`_
+digital-to-analog converters to configure the input thresholds of the
+discriminators and the oscillator control voltage.
 
-**BOARD[3:0]**
+In an embedded system, the same setup can be used. Alternatively, the
+voltages can be controlled by a microcontroller or set to fixed voltages.
+
+DAC1 has OSC_VC on VOUTA and the discriminator threshold of the START
+input on VOUTD.
+
+DAC2 has the discriminator thresholds of the for stop channels on its
+VOUTx outputs.
+
+DAC3 is not supported yet. The enable is provided to allow future
+versions with more channels. 
+
+It is possible to change the meaning of the voltages. For example,
+VOUTD of DAC1 can be used as a common threshold for all inputs.
+But the driver will not know that and this voltage will be accessed by
+the user as the START channel threshold.
+
+**DAC_SYNC**
+    3.3 V CMOS output.
+
+    Connect to the SYNC_n pins of the DACs. Avoid stubs.
+
+**DAC_SCLK**
+    3.3 V CMOS output.
+
+    Connect to the SCLK pins of the DACs. Avoid stubs.
+
+**DAC_D**
+    3.3 V CMOS output.
+
+    Connect to the DIN pins of the DACs. Avoid stubs.
+
+**DAC_RST_n**
+    3.3 V CMOS output.
+
+    Connect to the RST_n pins of the DACs. Avoid stubs.
+
+**DAC_EN**
+    3.3 V CMOS output.
+
+    Connect to the ENABLE_n pin of the DAC with the same index.
+
+:raw-html:`</div>`
+
+BOARD[3:0]
+**********
+
+:raw-html:`<div class="indent1">`
+
     3.3 V CMOS output.
 
     A bit pattern of 4 bits that is made visible in the driver API.
@@ -360,21 +449,35 @@ useful additional features.
     board to the software, in case it has to act differently for certain
     variants.
 
-**TEMP_ALARM_n**
-    3.3 V CMOS input.
+:raw-html:`</div>`
 
-    When set to LOW, the driver will report a temperature alarm. Can be
-    connected to the alarm output of a temperature sensor, to a
-    microcontroller, or can be connected to 3.3 V.
+TEMP_ALARM_n
+************
 
-**POWON**
-    3.3 V CMOS output.
+:raw-html:`<div class="indent1">`
 
-    This signal is set to HIGH after all power supplies of the module are
-    stable and the FPGA on the module is configured.
+3.3 V CMOS input.
 
-    It can be used to enble power supply circuits that are not required to
-    supply the TDC module.
+When set to LOW, the driver will report a temperature alarm. Can be
+connected to the alarm output of a temperature sensor, to a
+microcontroller, or can be connected to 3.3 V.
+
+:raw-html:`</div>`
+
+POWON
+*****
+
+:raw-html:`<div class="indent1">`
+
+3.3 V CMOS output.
+
+This signal is set to HIGH after all power supplies of the module are
+stable and the FPGA on the module is configured.
+
+It can be used to enble power supply circuits that are not required to
+supply the TDC module.
+
+:raw-html:`</div>`
 
 
 Routing of Differential Signals

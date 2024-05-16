@@ -329,10 +329,7 @@ useful additional features.
     **DAC_SYNC**
         3.3 V CMOS output.
 
-        Connect to the
-        :raw-latex:`$\overline{\text{SYNC}}$`\
-        :raw-html:`<overline>SYNC</overline>`
-        pins of the DACs. Avoid stubs.
+        Connect to the SYNC_n pins of the DACs. Avoid stubs.
 
     **DAC_SCLK**
         3.3 V CMOS output.
@@ -347,18 +344,12 @@ useful additional features.
     **DAC_RST_n**
         3.3 V CMOS output.
 
-        Connect to the
-        :raw-latex:`$\overline{\text{RST}}$`\
-        :raw-html:`<overline>RST</overline>`
-        pins of the DACs. Avoid stubs.
+        Connect to the RST_n pins of the DACs. Avoid stubs.
 
     **DAC_EN**
         3.3 V CMOS output.
 
-        Connect to the
-        :raw-latex:`$\overline{\text{ENABLE}}$`\
-        :raw-html:`<overline>ENABLE</overline>`
-        pin of the DAC with the same index.
+        Connect to the ENABLE_n pin of the DAC with the same index.
 
 **BOARD[3:0]**
     3.3 V CMOS output.

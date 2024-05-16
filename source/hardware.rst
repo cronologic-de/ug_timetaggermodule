@@ -370,7 +370,7 @@ useful additional features.
     variants.
 
 **TEMP_ALARM_n**
-    3.3 V CMOS output.
+    3.3 V CMOS input.
 
     When set to LOW, the driver will report a temperature alarm. Can be
     connected to the alarm output of a temperature sensor, to a

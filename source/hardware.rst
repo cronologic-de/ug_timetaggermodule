@@ -157,8 +157,7 @@ PROG_b
 
 3.3 V CMOS input.
 
-Strobe LOW for at least TBA to initiated reloading of the FPGA
-firmware.
+Strobe LOW to initiate a reload of the FPGA firmware.
 
 In a PCIe-CEM system this should be connected to the PERST_b pin of the
 connector and provided with a 5 kΩ pull-up to 3.3 V.

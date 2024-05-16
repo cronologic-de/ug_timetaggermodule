@@ -92,11 +92,15 @@ Input Voltages
 VCC33 and VCC25
 ***************
 
-:raw-html:`<div class="indent1">`
+.. raw:: html
+
+    <div class="indent1">
 
 Input Voltages of 3.3 V and 2.5 V.
 
-:raw-html:`</div>`
+.. raw:: html
+
+    </div>
 
 Clocking
 ^^^^^^^^
@@ -104,7 +108,9 @@ Clocking
 PCIe_100M_CLK
 **************
 
-:raw-html:`<div class="indent1">`
+.. raw:: html
+
+    <div class="indent1">
 
 A differential 100 MHz clock that complies with PCIe clock specifications
 with regards to signaling levels and jitter.
@@ -115,12 +121,16 @@ module. It can be taken directly from the clock of a PCIe_CEM connector.
 100 nF decoupling capacitors should be placed in series of this signal to
 implement AC coupling.
 
-:raw-html:`</div>`
+.. raw:: html
+
+    </div>
 
 TDC_150M_CLK
 ************
 
-:raw-html:`<div class="indent1">`
+.. raw:: html
+
+    <div class="indent1">
 
 A differential LVDS clock signal with 150 MHz freqeuency. This can be
 either synchronous or asynchronous to PCIe_100M_CLK.
@@ -129,7 +139,9 @@ The quality of this clock effects the measurement accuracy of the TDC, so
 a low-jitter clock source must be used. Spread-spectrum clocking should be
 disabled for this signal.
 
-:raw-html:`</div>`
+.. raw:: html
+
+    </div>
 
 Main Signals
 ^^^^^^^^^^^^
@@ -139,7 +151,9 @@ Module.
 PROG_n
 ******
 
-:raw-html:`<div class="indent1">`
+.. raw:: html
+
+    <div class="indent1">
 
 3.3 V CMOS input.
 
@@ -150,12 +164,16 @@ In a PCIe-CEM system this should be connected to the PERST_n pin of the
 connector and provided with a 5 kΩ pull-up to 3.3 V.
 When connected to 3.3 V, the firmware is only loaded once at power-up.
 
-:raw-html:`</div>`
+.. raw:: html
+
+    </div>
 
 PERST_n
 *******
 
-:raw-html:`<div class="indent1">`
+.. raw:: html
+
+    <div class="indent1">
 
 3.3 V CMOS input.
 
@@ -167,12 +185,16 @@ but it could be controlled my a microcontroller output.
 
 Timing should comply to the PCIe_CEM specification. 
 
-:raw-html:`</div>`
+.. raw:: html
+
+    </div>
 
 PCIe_TX[3:0]
 ************
 
-:raw-html:`<div class="indent1">`
+.. raw:: html
+
+    <div class="indent1">
 
 Differential PCIe output signals to transmit packets from the
 TimeTagger Module to the host. Compliant to PCIe standards.
@@ -183,23 +205,31 @@ The PCIe protocol will detect and correct the inversion.
 Lanes 0 to 3, or lanes 0 and 1, or only lane 0 can be connected to the
 host. The ordering of lanes can be reversed to simplify routing. 
 
-:raw-html:`</div>`
+.. raw:: html
+
+    </div>
 
 PCIe_RX[3:0]
 ************
 
-:raw-html:`<div class="indent1">`
+.. raw:: html
+
+    <div class="indent1">
 
 Same as PCIe_TX but an input for receiving packets from the host at the
 module.
 100 nF decoupling capacitors must be placed in series to these signals.
 
-:raw-html:`</div>`
+.. raw:: html
+
+    </div>
 
 START
 *****
 
-:raw-html:`<div class="indent1">`
+.. raw:: html
+
+    <div class="indent1">
 
 Differential LVDS input to start a TDC measurement. If single ended
 signals or small scale signals shall be processed, a discriminator must be
@@ -208,12 +238,16 @@ implemented.
 This signal must not be left floating and should always be in a well
 defined LOW or HIGH state.
 
-:raw-html:`</div>`
+.. raw:: html
+
+    </div>
 
 STOP[3:0]
 *********
 
-:raw-html:`<div class="indent1">`
+.. raw:: html
+
+    <div class="indent1">
 
 Differential LVDS input to create a time measurement on the respective
 channel.
@@ -221,7 +255,9 @@ channel.
 This signal must not be left floating and should always be in a well
 defined LOW or HIGH state.
 
-:raw-html:`</div>`
+.. raw:: html
+
+    </div>
 
 Optional Signals
 ^^^^^^^^^^^^^^^^
@@ -231,13 +267,15 @@ useful additional features.
 .. attention::
 
     Even if not in use, JTAG_TCK and TEMP_ALARM_n have to be connected
-    correctly. See the descriptions of these signals.
+    correctly. See the descriptions of these signals for details.
 
 
 PCIe_SMCLK and PCIe_SMDAT
 *************************
 
-:raw-html:`<div class="indent1">`
+.. raw:: html
+
+    <div class="indent1">
 
 3.3 V CMOS signals for system management bus.
 
@@ -246,13 +284,17 @@ Currently not supported by the driver and firmware.
 Can be connected to the corresponding signals on a PCIe_CEM connector
 with the 470 Ω series resistor or can be left floating.
 
-:raw-html:`</div>`
+.. raw:: html
+
+    </div>
 
 
 JTAG signals
 ************
 
-:raw-html:`<div class="indent1">`
+.. raw:: html
+
+    <div class="indent1">
 
 The JTAG port for debugging, reflashing and interactive development of
 the FPGA hardware. This usually is not required for a production system,
@@ -302,12 +344,16 @@ by Digilent, provided, e.g., by
     Otherwise, if JTAG is not used, this signal must be tied to GND
     or 3.3 V.
 
-:raw-html:`</div>`
+.. raw:: html
+
+    </div>
 
 Status Signals
 **************
 
-:raw-html:`<div class="indent1">`
+.. raw:: html
+
+    <div class="indent1">
 
 There are four signals provided that can be used to provide information
 about the module status.
@@ -354,12 +400,16 @@ could alternatively be connected to microcontroller inputs.
     light up the green LED and STAT_CAPTURE[1] should light up the
     red LED.
 
-:raw-html:`</div>`
+.. raw:: html
+
+    </div>
 
 TiGer Signals
 *************
 
-:raw-html:`<div class="indent1">`
+.. raw:: html
+
+    <div class="indent1">
 
 **TiGer[4:0]**
     3.3 V CMOS output.
@@ -380,12 +430,16 @@ TiGer Signals
     the TiGer signals usually can be routed directly to their sinks and
     the output enables can be left unconnected.
 
-:raw-html:`</div>`
+.. raw:: html
+
+    </div>
 
 DAC Control
 ***********
 
-:raw-html:`<div class="indent1">`
+.. raw:: html
+
+    <div class="indent1">
 
 The driver for the module supports controlling of two
 `DAC8565 <https://www.ti.com/product/DAC8565>`_
@@ -434,12 +488,16 @@ the user as the START channel threshold.
 
     Connect to the ENABLE_n pin of the DAC with the same index.
 
-:raw-html:`</div>`
+.. raw:: html
+
+    </div>
 
 BOARD[3:0]
 **********
 
-:raw-html:`<div class="indent1">`
+.. raw:: html
+
+    <div class="indent1">
 
     3.3 V CMOS output.
 
@@ -449,12 +507,16 @@ BOARD[3:0]
     board to the software, in case it has to act differently for certain
     variants.
 
-:raw-html:`</div>`
+.. raw:: html
+
+    </div>
 
 TEMP_ALARM_n
 ************
 
-:raw-html:`<div class="indent1">`
+.. raw:: html
+
+    <div class="indent1">
 
 3.3 V CMOS input.
 
@@ -462,12 +524,16 @@ When set to LOW, the driver will report a temperature alarm. Can be
 connected to the alarm output of a temperature sensor, to a
 microcontroller, or can be connected to 3.3 V.
 
-:raw-html:`</div>`
+.. raw:: html
+
+    </div>
 
 POWON
 *****
 
-:raw-html:`<div class="indent1">`
+.. raw:: html
+
+    <div class="indent1">
 
 3.3 V CMOS output.
 
@@ -477,7 +543,9 @@ stable and the FPGA on the module is configured.
 It can be used to enble power supply circuits that are not required to
 supply the TDC module.
 
-:raw-html:`</div>`
+.. raw:: html
+
+    </div>
 
 
 Routing of Differential Signals

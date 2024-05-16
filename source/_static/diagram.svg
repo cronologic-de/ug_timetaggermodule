@@ -69,12 +69,12 @@
 </g>
 <g transform="translate(0,35)">
 <line x1="-20" y1="0" x2="-3.5" y2="0.0" stroke="#000000" fill="none" stroke-width="1" marker-end="url(#bubble)"/>
-<text class="fnt1" x="10" y="0" text-anchor="normal" dy="3.5">PROG_n</text>
+<text class="fnt1" x="10" y="0" text-anchor="normal" dy="3.5">PROG_b</text>
 <text class="fnt1" x="-30" y="0" text-anchor="end" dy="3.5" style="fill:#969696">wire</text>
 </g>
 <g transform="translate(0,55)">
 <line x1="-20" y1="0" x2="-3.5" y2="0.0" stroke="#000000" fill="none" stroke-width="1" marker-end="url(#bubble)"/>
-<text class="fnt1" x="10" y="0" text-anchor="normal" dy="3.5">PERST_n</text>
+<text class="fnt1" x="10" y="0" text-anchor="normal" dy="3.5">PERST_b</text>
 <text class="fnt1" x="-30" y="0" text-anchor="end" dy="3.5" style="fill:#969696">wire</text>
 </g>
 <g transform="translate(0,75)">
@@ -98,7 +98,7 @@
 <text class="fnt2" x="120.0" y="0" text-anchor="middle" dy="4.5">Optional Signals</text>
 <g transform="translate(0,15)">
 <line x1="-20" y1="0" x2="-3.5" y2="0.0" stroke="#000000" fill="none" stroke-width="1" marker-end="url(#bubble)"/>
-<text class="fnt1" x="10" y="0" text-anchor="normal" dy="3.5">TEMP_ALARM_n</text>
+<text class="fnt1" x="10" y="0" text-anchor="normal" dy="3.5">TEMP_ALARM_b</text>
 <text class="fnt1" x="-30" y="0" text-anchor="end" dy="3.5" style="fill:#969696">wire</text>
 </g>
 <g transform="translate(240,15)">

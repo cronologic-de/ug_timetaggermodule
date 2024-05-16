@@ -148,7 +148,7 @@ Main Signals
 All these signals must be correctly connected to operate the TimeTagger
 Module.
 
-PROG_n
+PROG_b
 ******
 
 .. raw:: html
@@ -160,7 +160,7 @@ PROG_n
 Strobe LOW for at least TBA to initiated reloading of the FPGA
 firmware.
 
-In a PCIe-CEM system this should be connected to the PERST_n pin of the
+In a PCIe-CEM system this should be connected to the PERST_b pin of the
 connector and provided with a 5 kΩ pull-up to 3.3 V.
 When connected to 3.3 V, the firmware is only loaded once at power-up.
 
@@ -168,7 +168,7 @@ When connected to 3.3 V, the firmware is only loaded once at power-up.
 
     </div>
 
-PERST_n
+PERST_b
 *******
 
 .. raw:: html
@@ -266,7 +266,7 @@ useful additional features.
 
 .. attention::
 
-    Even if not in use, JTAG_TCK and TEMP_ALARM_n have to be connected
+    Even if not in use, JTAG_TCK and TEMP_ALARM_b have to be connected
     correctly. See the descriptions of these signals for details.
 
 
@@ -466,7 +466,7 @@ the user as the START channel threshold.
 **DAC_SYNC**
     3.3 V CMOS output.
 
-    Connect to the SYNC_n pins of the DACs. Avoid stubs.
+    Connect to the SYNC_b pins of the DACs. Avoid stubs.
 
 **DAC_SCLK**
     3.3 V CMOS output.
@@ -478,15 +478,15 @@ the user as the START channel threshold.
 
     Connect to the DIN pins of the DACs. Avoid stubs.
 
-**DAC_RST_n**
+**DAC_RST_b**
     3.3 V CMOS output.
 
-    Connect to the RST_n pins of the DACs. Avoid stubs.
+    Connect to the RST_b pins of the DACs. Avoid stubs.
 
 **DAC_EN**
     3.3 V CMOS output.
 
-    Connect to the ENABLE_n pin of the DAC with the same index.
+    Connect to the ENABLE_b pin of the DAC with the same index.
 
 .. raw:: html
 
@@ -511,7 +511,7 @@ BOARD[3:0]
 
     </div>
 
-TEMP_ALARM_n
+TEMP_ALARM_b
 ************
 
 .. raw:: html
@@ -717,13 +717,13 @@ standard (see :numref:`Section %s<sec signal standard>`)
     +----------------------+-----+-----+---------------------------++-----------------+-----+-----+----------------------------+
     | TiGer0_OE\ :sup:`2`  | 41  | 42  | TiGer4_OE\ :sup:`2`       || DNC             | 91  | 92  | JTAG_TMS\ :sup:`2`         |
     +----------------------+-----+-----+---------------------------++-----------------+-----+-----+----------------------------+
-    | TiGer1\ :sup:`2`     | 43  | 44  |                           || DNC             | 93  | 94  |  PROG_n\ :sup:`2`          |
+    | TiGer1\ :sup:`2`     | 43  | 44  |                           || DNC             | 93  | 94  |  PROG_b\ :sup:`2`          |
     +----------------------+-----+-----+---------------------------++-----------------+-----+-----+----------------------------+
     | TiGer0\ :sup:`2`     | 45  | 46  |                           || DNC             | 95  | 96  |  DONE\ :sup:`2`            |
     +----------------------+-----+-----+---------------------------++-----------------+-----+-----+----------------------------+
     | GND                  | 47  | 48  |  GND                      || VCC33\ :sup:`4` | 97  | 98  |   GND                      |
     +----------------------+-----+-----+---------------------------++-----------------+-----+-----+----------------------------+
-    | PERST_n\ :sup:`2`    | 49  | 50  |                           || VCC33\ :sup:`4` | 99  | 100 |  GND                       |
+    | PERST_b\ :sup:`2`    | 49  | 50  |                           || VCC33\ :sup:`4` | 99  | 100 |  GND                       |
     +----------------------+-----+-----+---------------------------++-----------------+-----+-----+----------------------------+
     |                      |     |     |                           ||  GND            | F1  | F2  |   GND                      |
     +----------------------+-----+-----+---------------------------++-----------------+-----+-----+----------------------------+
@@ -761,7 +761,7 @@ standard (see :numref:`Section %s<sec signal standard>`)
     +------------------+-----+-----+--------------------------++-------------------------+-----+-----+------------------------+
     | DNC              |  5  |  6  | DNC                      ||                         | 55  | 56  | POWON\ :sup:`2`        |
     +------------------+-----+-----+--------------------------++-------------------------+-----+-----+------------------------+
-    | DNC              |  7  |  8  | DNC                      || STAT_CAPTURE0\ :sup:`2` | 57  | 58  | TEMP_ALARM_n\ :sup:`2` |
+    | DNC              |  7  |  8  | DNC                      || STAT_CAPTURE0\ :sup:`2` | 57  | 58  | TEMP_ALARM_b\ :sup:`2` |
     +------------------+-----+-----+--------------------------++-------------------------+-----+-----+------------------------+
     | DNC              |  9  | 10  | STOP3_N\ :sup:`3`        || STAT_CAPTURE1\ :sup:`2` | 59  | 60  | DNC                    |
     +------------------+-----+-----+--------------------------++-------------------------+-----+-----+------------------------+

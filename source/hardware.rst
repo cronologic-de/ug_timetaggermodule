@@ -594,8 +594,10 @@ signal standard, as listed below.
     +------------------+------------------+------------------+------------------+------------------+------------------+
 
 :sup:`3`\ LVDS
-    V\ :sub:`IDIFF` is the differential input voltage (U - Ū), where U is HIGH
-    [or (Ū - U), where Ū is HIGH]. The input impedance is 100 Ω differential.
+    In the table below, V\ :sub:`IDIFF` is the differential input voltage
+    (U - Ū), where U is HIGH [or (Ū - U), where Ū is HIGH].
+    V\ :sub:`ICM` is the input common-mode voltage.
+    The input impedance is 100 Ω differential.
 
 .. table::
     :width: 100%

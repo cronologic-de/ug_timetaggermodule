@@ -45,8 +45,8 @@ This User Guide is also available as `PDF download
 The user guides of all products by cronologic GmbH & Co. KG are available 
 online at `docs.cronologic.de <https://docs.cronologic.de>`_.
 
-.. the contraption below is to fix section numbering in the PDF output in the 
-   index page
+.. "only html" and "raw latex" is to fix section numbering in the PDF output
+   in the index page
 
 .. only:: html
 
@@ -55,8 +55,8 @@ online at `docs.cronologic.de <https://docs.cronologic.de>`_.
 
 .. raw:: latex
 
-   \phantomsection
-   \addcontentsline{toc}{section}{Module Overview}
+    \phantomsection
+    \addcontentsline{toc}{section}{Module Overview}
     \section*{Module Overview}
 
 `cronologic <https://www.cronologic.de>`_ offers the 

@@ -86,8 +86,8 @@ standards are listed in :numref:`Section %s<sec signal standard>`.
     Block diagram giving an overview of the inputs and outputs of the
     TimeTagger Module, respectively.
 
-Input Voltages
-^^^^^^^^^^^^^^
+Supply Voltages
+^^^^^^^^^^^^^^^
 
 VCC33 and VCC25
 ***************
@@ -96,7 +96,7 @@ VCC33 and VCC25
 
     <div class="indent1">
 
-Input Voltages of 3.3 V and 2.5 V.
+Supply voltages of 3.3 V and 2.5 V.
 
 .. raw:: html
 

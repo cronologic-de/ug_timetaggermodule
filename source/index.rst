@@ -71,11 +71,6 @@ as a modular version, as well, providing:
     Our TimeTagger4 TDC modules are the perfect choice if you are looking for
     picosecond resolution at the best possible price/performance ratio.
 
-**Bipolar design**
-    TDC modules can be combined with a wide range of detectors or constant 
-    fraction discriminators (CFD) as their threshold discriminators utilize 
-    positive or negative thresholds with configurable voltage.
-
 **Use the TiGer timing generator**
     Control your device with periodic pulse patterns, the exact timing of which
     is measured by the TDC. You can use any input channel of our module to 

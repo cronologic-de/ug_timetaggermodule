@@ -498,13 +498,13 @@ BOARD[3:0]
 
     <div class="indent1">
 
-    3.3 V CMOS output.
+3.3 V CMOS output.
 
-    A bit pattern of 4 bits that is made visible in the driver API.
+A bit pattern of 4 bits that is made visible in the driver API.
 
-    Can be used to communicate version or type information about the base
-    board to the software, in case it has to act differently for certain
-    variants.
+Can be used to communicate version or type information about the base
+board to the software, in case it has to act differently for certain
+variants.
 
 .. raw:: html
 

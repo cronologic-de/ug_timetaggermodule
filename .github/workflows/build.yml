@@ -47,11 +47,11 @@ jobs:
     - name: Compile pdf from tex
       uses: xu-cheng/latex-action@v3
       with:
-        root_file: build/latex/timetaggermoduleuserguide.tex
+        root_file: build/latex/timetaggermodulesuserguide.tex
         latexmk_use_lualatex: true
 
     - name: Upload pdf to artifacts
       uses: actions/upload-artifact@v4
       with:
         name: pdf
-        path: build/latex/timetaggermoduleuserguide.pdf
+        path: build/latex/timetaggermodulesuserguide.pdf

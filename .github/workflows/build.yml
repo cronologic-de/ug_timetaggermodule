@@ -29,9 +29,6 @@ jobs:
     - name: Build Sphinx HTML
       run: make html
     
-    - name: Build Sphinx PDF
-      run: make latexpdf
-
     - name: zip HTML output
       run: |
         cd build
@@ -42,6 +39,13 @@ jobs:
       with:
         name: html
         path: build/html.zip
+
+    - name: Build Sphinx PDF
+      run: |
+        make latex
+        cd build/latex
+        make
+        cd ../..
 
     - name: Upload pdf to artifacts
       uses: actions/upload-artifact@v4

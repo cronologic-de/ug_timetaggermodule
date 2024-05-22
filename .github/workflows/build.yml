@@ -48,6 +48,7 @@ jobs:
       uses: xu-cheng/latex-action@v3
       with:
         root_file: build/latex/timetaggermodulesuserguide.tex
+        working_directory: build/latex
         latexmk_use_lualatex: true
 
     - name: Upload pdf to artifacts

@@ -40,12 +40,15 @@ jobs:
         name: html
         path: build/html.zip
 
-    - name: Build Sphinx PDF
+    - name: Build Sphinx latex file
       run: |
         make latex
-        cd build/latex
-        make
-        cd ../..
+
+    - name: Compile pdf from tex
+      uses: xu-cheng/latex-action@v3
+      with:
+        root_file: build/latex/timetaggermoduleuserguide.tex
+        latexmk_use_lualatex: true
 
     - name: Upload pdf to artifacts
       uses: actions/upload-artifact@v4

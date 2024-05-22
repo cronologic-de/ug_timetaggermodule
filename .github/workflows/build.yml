@@ -28,21 +28,17 @@ jobs:
 
     - name: Build Sphinx HTML
       run: make html
-    
-    - name: zip HTML output
-      run: |
-        cd build
-        zip -r html.zip html/*
 
     - name: Upload zip to artifacts
       uses: actions/upload-artifact@v4
       with:
         name: html
-        path: build/html.zip
+        path: build/html
 
     - name: Build Sphinx latex file
       run: |
         make latex
+        ls
 
     - name: Compile pdf from tex
       uses: xu-cheng/latex-action@v3

@@ -38,11 +38,6 @@ jobs:
     - name: Build Sphinx latex file
       run: |
         make latex
-        ls
-        cd build
-        ls
-        cd latex
-        ls
 
     - name: Compile pdf from tex
       uses: xu-cheng/latex-action@v3

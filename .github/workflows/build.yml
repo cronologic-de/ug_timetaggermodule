@@ -1,0 +1,50 @@
+name: Build HTML and PDF documentation
+
+on:
+  push:
+    branches:
+      - setup-workflows
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      with:
+        # checkout specific branch
+        ref: setup-workflows
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: 3.12
+        cache: 'pip'
+    - name: Install dependencies
+      run: |
+        pip -m pip install --upgrade pip
+        pip install -r requirements.txt
+
+    - name: Build Sphinx HTML
+      run: make html
+    
+    - name: Build Sphinx PDF
+      run: make latexpdf
+
+    - name: zip HTML output
+      run: |
+        cd build
+        zip -r html.zip html/*
+
+    - name: Upload zip to artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: html
+        path: build/html.zip
+
+    - name: Upload pdf to artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: pdf
+        path: build/latex/timetaggermoduleuserguide.pdf

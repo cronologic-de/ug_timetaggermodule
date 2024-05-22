@@ -36,8 +36,7 @@ jobs:
         path: build/html
 
     - name: Build Sphinx latex file
-      run: |
-        make latex
+      run: make latex
 
     - name: Compile pdf from tex
       uses: xu-cheng/latex-action@v3

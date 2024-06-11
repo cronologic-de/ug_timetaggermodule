@@ -113,7 +113,7 @@ PCIe_100M_CLK
     <div class="indent1">
 
 A differential 100 MHz clock that complies with PCIe clock specifications
-with regards to signaling levels and jitter.
+with regard to signaling levels and jitter.
 
 This must be synchronous to the clock of the PCIe host connected to the
 module. It can be taken directly from the clock of a PCIe_CEM connector.
@@ -132,7 +132,7 @@ TDC_150M_CLK
 
     <div class="indent1">
 
-A differential LVDS clock signal with 150 MHz freqeuency. This can be
+A differential LVDS clock signal with 150 MHz frequency. This can be
 either synchronous or asynchronous to PCIe_100M_CLK.
 
 The quality of this clock effects the measurement accuracy of the TDC, so
@@ -234,8 +234,8 @@ Differential LVDS input to start a TDC measurement. If single ended
 signals or small scale signals shall be processed, a discriminator must be
 implemented.
 
-This signal must not be left floating and should always be in a well
-defined LOW or HIGH state.
+This signal must not be left floating and should always be in a well-defined
+LOW or HIGH state.
 
 .. raw:: html
 
@@ -251,8 +251,8 @@ STOP[3:0]
 Differential LVDS input to create a time measurement on the respective
 channel.
 
-This signal must not be left floating and should always be in a well
-defined LOW or HIGH state.
+This signal must not be left floating and should always be in a well-defined
+LOW or HIGH state.
 
 .. raw:: html
 
@@ -276,12 +276,12 @@ JTAG signals
 
     <div class="indent1">
 
-The JTAG port for debugging, reflashing and interactive development of
-the FPGA hardware. This usually is not required for a production system,
+The JTAG port for debugging, re-flashing and interactive development of
+the FPGA hardware. This is usually not required for a production system,
 as the firmware delivered with the module provides the capability to
 update the firmware over PCIe.
 
-However, we recommend to implement a JTAG connector anyway if space is
+However, we recommend implementing a JTAG connector anyway if space is
 available, to simplify debugging of the base board. See 
 :numref:`Figure %s<fig jtag circuit diagram>` for the implementation.
 
@@ -314,7 +314,7 @@ by Digilent, provided, e.g., by
     Control signal from the JTAG controller to the FPGA.
 
 **JTAG_TCK**
-    3.3 V CMOS intput.
+    3.3 V CMOS input.
 
     Clock signal from the JTAG controller to the FPGA. 
 
@@ -403,7 +403,7 @@ TiGer Signals
     On cronologic's TimeTagger4 boards, the connectors for the TiGer
     outputs are shared with the TDC inputs.
 
-    To facilitate this, tristate buffers close to the connector are used to
+    To facilitate this, tri-state buffers close to the connector are used to
     conditionally drive the TiGer signals to the connector.
 
     The buffers are enabled when TiGer_OE is HIGH. In an embedded system
@@ -520,7 +520,7 @@ POWON
 This signal is set to HIGH after all power supplies of the module are
 stable and the FPGA on the module is configured.
 
-It can be used to enble power supply circuits that are not required to
+It can be used to enable power supply circuits that are not required to
 supply the TDC module.
 
 .. raw:: html
@@ -537,7 +537,7 @@ routed carefully to provide good signal integrity.
 The routing can either be done as a coupled pair with 100 Ω differential
 impedance or as two independent wires with 50 Ω single ended impedance.
 
-An uninterupted reference plane should be on the next layer along the whole
+An uninterrupted reference plane should be on the next layer along the whole
 stretch of the connection. Stubs and branches must be avoided.
 
 All differential inputs are terminated on the board with 100 Ω differential
@@ -626,7 +626,7 @@ the pin assignments of connectors JB1 and JB2 (see
 Some signals are optional and do not have to 
 be connected, as is described in :numref:`Section %s<sec io>`.
 
-Pins that must not be connected are marked as NC .
+Pins that must not be connected are marked as NC.
 
 
 .. _jb1 table:

@@ -269,25 +269,6 @@ useful additional features.
     correctly. See the descriptions of these signals for details.
 
 
-PCIe_SMCLK and PCIe_SMDAT
-*************************
-
-.. raw:: html
-
-    <div class="indent1">
-
-3.3 V CMOS signals for system management bus.
-
-Currently not supported by the driver and firmware.
-
-Can be connected to the corresponding signals on a PCIe_CEM connector
-with the 470 Ω series resistor or can be left floating.
-
-.. raw:: html
-
-    </div>
-
-
 JTAG signals
 ************
 
@@ -699,9 +680,9 @@ standard (see :numref:`Section %s<sec signal standard>`)
     +------------------------------------------------------------------+-----+-----+-----------------------------------------------------------++---------------------------------------------------+-----+-----+-------------------------------------------------------------+
     | GND                                                              | 29  | 30  | GND                                                       || NC                                                | 79  | 80  | NC                                                          |
     +------------------------------------------------------------------+-----+-----+-----------------------------------------------------------++---------------------------------------------------+-----+-----+-------------------------------------------------------------+
-    | :ref:`PCIe_SMCLK <hardware:PCIe_SMCLK and PCIe_SMDAT>`\ :sup:`2` | 31  | 32  | :ref:`TiGer2_OE <hardware:TiGer Signals>`\ :sup:`2`       || NC                                                | 81  | 82  | :ref:`STAT_INITIALIZED <hardware:Status Signals>`\ :sup:`2` |
+    | GND                                                              | 31  | 32  | :ref:`TiGer2_OE <hardware:TiGer Signals>`\ :sup:`2`       || NC                                                | 81  | 82  | :ref:`STAT_INITIALIZED <hardware:Status Signals>`\ :sup:`2` |
     +------------------------------------------------------------------+-----+-----+-----------------------------------------------------------++---------------------------------------------------+-----+-----+-------------------------------------------------------------+
-    | :ref:`PCIe_SMDAT <hardware:PCIe_SMCLK and PCIe_SMDAT>`\ :sup:`2` | 33  | 34  | :ref:`TiGer3 <hardware:TiGer Signals>`\ :sup:`2`          || 3.3 V Testpin                                     | 83  | 84  | GND                                                         |
+    | GND                                                              | 33  | 34  | :ref:`TiGer3 <hardware:TiGer Signals>`\ :sup:`2`          || 3.3 V Testpin                                     | 83  | 84  | GND                                                         |
     +------------------------------------------------------------------+-----+-----+-----------------------------------------------------------++---------------------------------------------------+-----+-----+-------------------------------------------------------------+
     | NC                                                               | 35  | 36  | :ref:`TiGer2 <hardware:TiGer Signals>`\ :sup:`2`          || NC                                                | 85  | 86  | :ref:`JTAG_TDI <hardware:JTAG Signals>`\ :sup:`2`           |
     +------------------------------------------------------------------+-----+-----+-----------------------------------------------------------++---------------------------------------------------+-----+-----+-------------------------------------------------------------+

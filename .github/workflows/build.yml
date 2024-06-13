@@ -3,7 +3,7 @@ name: Build HTML and PDF documentation
 on:
   push:
     branches:
-      - setup-workflows
+      - tmp
 
 jobs:
   build:

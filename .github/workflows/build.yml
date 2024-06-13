@@ -45,7 +45,7 @@ jobs:
         root_file: timetaggermodulesuserguide.tex
         working_directory: build/latex
         compiler: lualatex
-        pre_compile: "tlmgr update --self && tlmgr update --all"
+        # pre_compile: "tlmgr update --self && tlmgr update --all"
 
 
 

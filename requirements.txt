@@ -1,2 +1,2 @@
-sphinx
+sphinx=7.2.6
 furo

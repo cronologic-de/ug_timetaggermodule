@@ -39,22 +39,13 @@ jobs:
     - name: Build Sphinx latex file
       run: make latex
 
-    # - name: Compile pdf from tex
-    #   uses: xu-cheng/latex-action@v3
-    #   with:
-    #     root_file: timetaggermodulesuserguide.tex
-    #     working_directory: build/latex
-    #     compiler: lualatex
-    #     pre_compile: "tlmgr update --self && tlmgr update --all"
-    #     args: -lualatex -file-line-error -interaction=nonstopmode
-    - name: complie pdf using texlive-action
-      uses: xu-cheng/texlive-action@v2
+    - name: Compile pdf from tex
+      uses: xu-cheng/latex-action@v3
       with:
-        scheme: small
-        run: |
-          tlmgr install capt-of
-          tlmgr install fncychap
-          make -C build/latex
+        root_file: timetaggermodulesuserguide.tex
+        working_directory: build/latex
+        compiler: lualatex
+        pre_compile: "tlmgr update --self && tlmgr update --all"
 
 
 

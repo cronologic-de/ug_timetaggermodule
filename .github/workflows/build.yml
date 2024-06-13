@@ -52,9 +52,8 @@ jobs:
       with:
         scheme: small
         run: |
-          # tlmgr update --self
-          # tlmgr update --all
-          tlmgr install fncychap capt-of
+          tlmgr install fncychap
+          tlmgr install capt-of
           make -C build/latex
 
 

@@ -43,9 +43,9 @@ jobs:
       uses: xu-cheng/latex-action@v3
       with:
         root_file: timetaggermodulesuserguide.tex
+        latexmk_use_lualatex: true
         working_directory: build/latex
-        compiler: lualatex
-        # pre_compile: "tlmgr update --self && tlmgr update --all"
+        pre_compile: "tlmgr update --self && tlmgr update --all"
 
 
 

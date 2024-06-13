@@ -55,8 +55,9 @@ jobs:
       if: ${{ failure() }}
       uses: actions/upload-artifact@v4
       with:
-        name: latex_logfile
-        path: build/latex/timetaggermodulesuserguide.log
+        name: latex_files
+        path: |
+          build/latex/*
 
 
     - name: Upload pdf to artifacts

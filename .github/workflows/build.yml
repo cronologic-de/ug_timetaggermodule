@@ -45,6 +45,7 @@ jobs:
         root_file: timetaggermodulesuserguide.tex
         working_directory: build/latex
         compiler: lualatex
+        pre_compile: "tlmgr update --self && tlmgr update --all"
         args: -lualatex -file-line-error -interaction=nonstopmode
 
     - name: upload log if latexmk fails

@@ -12,10 +12,6 @@ TimeTagger Modules User Guide
 
    \RaggedRight
 
-.. note::
-
-   This User Guide is under active development.
-
 .. raw:: latex
 
    \phantomsection
@@ -99,7 +95,7 @@ as a modular version, as well, providing:
 - 60 MHits/s over all channels of sustained stops
 
 For an extensive overview of all features and functions, please refer to the
-`TimeTagger4 User Guide 
+`TimeTagger4 User Guide 
 <https://download.cronologic.de/TimeTagger/TimeTagger4_User_Guide.pdf>`_.
 
 .. toctree::

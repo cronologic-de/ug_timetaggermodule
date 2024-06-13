@@ -32,7 +32,7 @@ extensions = [
 # breathe_show_define_initializer = True
 
 autosectionlabel_prefix_document = True
-autosectionlabel_maxdepth = 2
+autosectionlabel_maxdepth = None
 
 rst_prolog = open("global.rst", "r").read()
 

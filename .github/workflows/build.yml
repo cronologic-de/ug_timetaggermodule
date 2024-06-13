@@ -40,16 +40,10 @@ jobs:
       run: make latex
 
     - name: Compile pdf from tex
-      uses: xu-cheng/latex-action@v3
+      uses: xu-cheng/texlive-action@v2
       with:
-        root_file: timetaggermodulesuserguide.tex
-        working_directory: build/latex
-        latexmk_use_lualatex: true
-
-    - name: run latex
-      run: |
-        cd build/latex
-        make
+        scheme: full
+        run: make -C build/latex
 
     - name: upload log if latexmk fails
       if: ${{ failure() }}

@@ -265,7 +265,8 @@ useful additional features.
 
 .. attention::
 
-    Even if not in use, JTAG_TCK and TEMP_ALARM_b have to be connected
+    Even if not in use, :ref:`JTAG_TCK <jtag_tck>` and
+    :ref:`TEMP_ALARM_b <hardware:TEMP_ALARM_b>` have to be connected
     correctly. See the descriptions of these signals for details.
 
 
@@ -298,6 +299,7 @@ by Digilent, provided, e.g., by
 
     Circuit diagram for a JTAG connector.
 
+
 **JTAG_TDI**
     3.3 V CMOS input.
 
@@ -312,6 +314,8 @@ by Digilent, provided, e.g., by
     3.3 V CMOS input.
 
     Control signal from the JTAG controller to the FPGA.
+
+.. _jtag_tck:
 
 **JTAG_TCK**
     3.3 V CMOS input.

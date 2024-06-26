@@ -619,6 +619,11 @@ signal standard, as listed below.
 Pin Assignment
 --------------
 
+.. warning::
+
+    This user guide is under development. The Pin-Assignment below is subject
+    to change.
+
 The tables in :numref:`Sections %s<jb1 table>` and :numref:`%s<jb2 table>` list
 the pin assignments of connectors JB1 and JB2 (see
 :numref:`Figure %s<fig underneath>`).

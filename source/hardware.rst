@@ -27,7 +27,8 @@ Overview
     :width: 40%
 
     Bottom-view of a TimeTagger Module. For the pin assignment of connectors
-    JB1 and JB2, see :numref:`Section %s<pin assignment>`.
+    JB1 and JB2, see :numref:`Section %s<pin assignment>`. In the above
+    image, Pin 1 is at the bottom right of the connectors, respectively.
 
 :numref:`Figures %s<fig top>` and :numref:`%s<fig bottom>` show the top and
 bottom view of the module.

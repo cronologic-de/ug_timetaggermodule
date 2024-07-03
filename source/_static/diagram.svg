@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!-- Created by Symbolator https://zebreus.github.io/symbolator -->
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" width="438" height="464" viewBox="-99 -20 438.0 464.0" version="1.1">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" width="438" height="444" viewBox="-99 -20 438.0 444.0" version="1.1">
 <style type="text/css">
 <![CDATA[
 .fnt1 {fill:#000000;
@@ -16,16 +16,16 @@
 ]]>
 </style>
 <defs>
-<marker id="arrow_fwd" markerWidth="8.0" markerHeight="8.0" viewBox="0 0 8.0 8.0" refX="3.2" refY="4.0" orient="auto" markerUnits="userSpaceOnUse">
-<g transform="translate(-0.0,4.0)"><path d="M 0 -4 C 2 -1, 2 1, 0 4 L 8 0 z" stroke="none" fill="#000000"/>
-</g>
-</marker>
 <marker id="arrow_back" markerWidth="8.0" markerHeight="8.0" viewBox="0 0 8.0 8.0" refX="4.8" refY="4.0" orient="auto" markerUnits="userSpaceOnUse">
 <g transform="translate(8.0,4.0)"><path d="M 0 -4 C -2 -1, -2 1, 0 4 L -8 0 z" stroke="none" fill="#000000"/>
 </g>
 </marker>
 <marker id="bubble" markerWidth="7.0" markerHeight="7.0" viewBox="0 0 7.0 7.0" refX="3.5" refY="3.5" orient="auto" markerUnits="userSpaceOnUse">
 <g transform="translate(3.5,3.5)"><ellipse cx="0.0" cy="0.0" rx="3.0" ry="3.0" stroke="#000000" fill="#FFFFFF" stroke-width="1"/>
+</g>
+</marker>
+<marker id="arrow_fwd" markerWidth="8.0" markerHeight="8.0" viewBox="0 0 8.0 8.0" refX="3.2" refY="4.0" orient="auto" markerUnits="userSpaceOnUse">
+<g transform="translate(-0.0,4.0)"><path d="M 0 -4 C 2 -1, 2 1, 0 4 L 8 0 z" stroke="none" fill="#000000"/>
 </g>
 </marker>
 <marker id="clock" markerWidth="8.0" markerHeight="15.0" viewBox="0 0 8.0 15.0" refX="0.5" refY="7.5" orient="auto" markerUnits="userSpaceOnUse">
@@ -94,7 +94,7 @@
 </g>
 </g>
 <g transform="translate(0,248.0)">
-<rect x="0" y="-15.0" width="240" height="205.0" stroke="#000000" fill="#FFAFFD" stroke-width="1"/>
+<rect x="0" y="-15.0" width="240" height="185.0" stroke="#000000" fill="#FFAFFD" stroke-width="1"/>
 <text class="fnt2" x="120.0" y="0" text-anchor="middle" dy="4.5">Optional Signals</text>
 <g transform="translate(0,15)">
 <line x1="-20" y1="0" x2="-3.5" y2="0.0" stroke="#000000" fill="none" stroke-width="1" marker-end="url(#bubble)"/>
@@ -107,45 +107,40 @@
 <text class="fnt1" x="30" y="0" text-anchor="normal" dy="3.5" style="fill:#969696">wire <tspan fill="#039BE5">[3:0]</tspan></text>
 </g>
 <g transform="translate(240,35)">
-<line x1="16.16" y1="4.702643708725836e-16" x2="3.84" y2="-4.702643708725836e-16" stroke="#000000" fill="none" stroke-width="3" marker-start="url(#arrow_back)" marker-end="url(#arrow_fwd)"/>
-<text class="fnt1" x="-10" y="0" text-anchor="end" dy="3.5">PCIe_SMB</text>
-<text class="fnt1" x="30" y="0" text-anchor="normal" dy="3.5" style="fill:#969696">wire <tspan fill="#039BE5">[1:0]</tspan></text>
-</g>
-<g transform="translate(240,55)">
 <line x1="20" y1="0" x2="0" y2="0" stroke="#000000" fill="none" stroke-width="3"/>
 <text class="fnt1" x="-10" y="0" text-anchor="end" dy="3.5">STAT</text>
 <text class="fnt1" x="30" y="0" text-anchor="normal" dy="3.5" style="fill:#969696">wire <tspan fill="#039BE5">[2:0]</tspan></text>
 </g>
-<g transform="translate(240,75)">
+<g transform="translate(240,55)">
 <line x1="20" y1="0" x2="0" y2="0" stroke="#000000" fill="none" stroke-width="1"/>
 <text class="fnt1" x="-10" y="0" text-anchor="end" dy="3.5">DONE</text>
 <text class="fnt1" x="30" y="0" text-anchor="normal" dy="3.5" style="fill:#969696">wire</text>
 </g>
-<g transform="translate(240,95)">
+<g transform="translate(240,75)">
 <line x1="20" y1="0" x2="0" y2="0" stroke="#000000" fill="none" stroke-width="3"/>
 <text class="fnt1" x="-10" y="0" text-anchor="end" dy="3.5">TiGer</text>
 <text class="fnt1" x="30" y="0" text-anchor="normal" dy="3.5" style="fill:#969696">wire <tspan fill="#039BE5">[4:0]</tspan></text>
 </g>
-<g transform="translate(240,115)">
+<g transform="translate(240,95)">
 <line x1="20" y1="0" x2="0" y2="0" stroke="#000000" fill="none" stroke-width="3"/>
 <text class="fnt1" x="-10" y="0" text-anchor="end" dy="3.5">TiGer_OE</text>
 <text class="fnt1" x="30" y="0" text-anchor="normal" dy="3.5" style="fill:#969696">wire <tspan fill="#039BE5">[4:0]</tspan></text>
 </g>
-<g transform="translate(240,135)">
+<g transform="translate(240,115)">
 <line x1="20" y1="0" x2="0" y2="0" stroke="#000000" fill="none" stroke-width="3"/>
 <text class="fnt1" x="-10" y="0" text-anchor="end" dy="3.5">DAC_CTRL</text>
 <text class="fnt1" x="30" y="0" text-anchor="normal" dy="3.5" style="fill:#969696">wire <tspan fill="#039BE5">[5:0]</tspan></text>
 </g>
-<g transform="translate(240,155)">
+<g transform="translate(240,135)">
 <line x1="20" y1="0" x2="0" y2="0" stroke="#000000" fill="none" stroke-width="3"/>
 <text class="fnt1" x="-10" y="0" text-anchor="end" dy="3.5">BOARD</text>
 <text class="fnt1" x="30" y="0" text-anchor="normal" dy="3.5" style="fill:#969696">wire <tspan fill="#039BE5">[3:0]</tspan></text>
 </g>
-<g transform="translate(240,175)">
+<g transform="translate(240,155)">
 <line x1="20" y1="0" x2="0" y2="0" stroke="#000000" fill="none" stroke-width="1"/>
 <text class="fnt1" x="-10" y="0" text-anchor="end" dy="3.5">POWON</text>
 <text class="fnt1" x="30" y="0" text-anchor="normal" dy="3.5" style="fill:#969696">wire</text>
 </g>
 </g>
-<rect x="1.0" y="44.0" width="238.0" height="393.0" stroke="#000000" fill="none" stroke-width="3"/>
+<rect x="1.0" y="44.0" width="238.0" height="373.0" stroke="#000000" fill="none" stroke-width="3"/>
 </svg>

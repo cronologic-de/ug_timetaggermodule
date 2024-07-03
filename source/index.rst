@@ -84,7 +84,7 @@ as a modular version, as well, providing:
    \section*{Features}
 
 - 4-channel common-start TDC module
-- Quantisation (measurement resolution): 100 ps
+- Quantization (measurement resolution): 100 ps
 - Double-pulse resolution: 200 ps
 - Dead time between groups: none
 - Minimum interval between starts: 3.2 ns

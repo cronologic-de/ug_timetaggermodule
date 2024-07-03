@@ -27,7 +27,8 @@ Overview
     :width: 40%
 
     Bottom-view of a TimeTagger Module. For the pin assignment of connectors
-    JB1 and JB2, see :numref:`Section %s<pin assignment>`.
+    JB1 and JB2, see :numref:`Section %s<pin assignment>`. In the above
+    image, Pin 1 is at the bottom right of the connectors, respectively.
 
 :numref:`Figures %s<fig top>` and :numref:`%s<fig bottom>` show the top and
 bottom view of the module.
@@ -113,7 +114,7 @@ PCIe_100M_CLK
     <div class="indent1">
 
 A differential 100 MHz clock that complies with PCIe clock specifications
-with regards to signaling levels and jitter.
+with regard to signaling levels and jitter.
 
 This must be synchronous to the clock of the PCIe host connected to the
 module. It can be taken directly from the clock of a PCIe_CEM connector.
@@ -132,7 +133,7 @@ TDC_150M_CLK
 
     <div class="indent1">
 
-A differential LVDS clock signal with 150 MHz freqeuency. This can be
+A differential LVDS clock signal with 150 MHz frequency. This can be
 either synchronous or asynchronous to PCIe_100M_CLK.
 
 The quality of this clock effects the measurement accuracy of the TDC, so
@@ -234,8 +235,8 @@ Differential LVDS input to start a TDC measurement. If single ended
 signals or small scale signals shall be processed, a discriminator must be
 implemented.
 
-This signal must not be left floating and should always be in a well
-defined LOW or HIGH state.
+This signal must not be left floating and should always be in a well-defined
+LOW or HIGH state.
 
 .. raw:: html
 
@@ -251,8 +252,8 @@ STOP[3:0]
 Differential LVDS input to create a time measurement on the respective
 channel.
 
-This signal must not be left floating and should always be in a well
-defined LOW or HIGH state.
+This signal must not be left floating and should always be in a well-defined
+LOW or HIGH state.
 
 .. raw:: html
 
@@ -265,27 +266,9 @@ useful additional features.
 
 .. attention::
 
-    Even if not in use, JTAG_TCK and TEMP_ALARM_b have to be connected
+    Even if not in use, :ref:`JTAG_TCK <jtag_tck>` and
+    :ref:`TEMP_ALARM_b <hardware:TEMP_ALARM_b>` have to be connected
     correctly. See the descriptions of these signals for details.
-
-
-PCIe_SMCLK and PCIe_SMDAT
-*************************
-
-.. raw:: html
-
-    <div class="indent1">
-
-3.3 V CMOS signals for system management bus.
-
-Currently not supported by the driver and firmware.
-
-Can be connected to the corresponding signals on a PCIe_CEM connector
-with the 470 Ω series resistor or can be left floating.
-
-.. raw:: html
-
-    </div>
 
 
 JTAG signals
@@ -295,12 +278,12 @@ JTAG signals
 
     <div class="indent1">
 
-The JTAG port for debugging, reflashing and interactive development of
-the FPGA hardware. This usually is not required for a production system,
+The JTAG port for debugging, re-flashing and interactive development of
+the FPGA hardware. This is usually not required for a production system,
 as the firmware delivered with the module provides the capability to
 update the firmware over PCIe.
 
-However, we recommend to implement a JTAG connector anyway if space is
+However, we recommend implementing a JTAG connector anyway if space is
 available, to simplify debugging of the base board. See 
 :numref:`Figure %s<fig jtag circuit diagram>` for the implementation.
 
@@ -317,6 +300,7 @@ by Digilent, provided, e.g., by
 
     Circuit diagram for a JTAG connector.
 
+
 **JTAG_TDI**
     3.3 V CMOS input.
 
@@ -332,8 +316,10 @@ by Digilent, provided, e.g., by
 
     Control signal from the JTAG controller to the FPGA.
 
+.. _jtag_tck:
+
 **JTAG_TCK**
-    3.3 V CMOS intput.
+    3.3 V CMOS input.
 
     Clock signal from the JTAG controller to the FPGA. 
 
@@ -422,7 +408,7 @@ TiGer Signals
     On cronologic's TimeTagger4 boards, the connectors for the TiGer
     outputs are shared with the TDC inputs.
 
-    To facilitate this, tristate buffers close to the connector are used to
+    To facilitate this, tri-state buffers close to the connector are used to
     conditionally drive the TiGer signals to the connector.
 
     The buffers are enabled when TiGer_OE is HIGH. In an embedded system
@@ -539,7 +525,7 @@ POWON
 This signal is set to HIGH after all power supplies of the module are
 stable and the FPGA on the module is configured.
 
-It can be used to enble power supply circuits that are not required to
+It can be used to enable power supply circuits that are not required to
 supply the TDC module.
 
 .. raw:: html
@@ -556,7 +542,7 @@ routed carefully to provide good signal integrity.
 The routing can either be done as a coupled pair with 100 Ω differential
 impedance or as two independent wires with 50 Ω single ended impedance.
 
-An uninterupted reference plane should be on the next layer along the whole
+An uninterrupted reference plane should be on the next layer along the whole
 stretch of the connection. Stubs and branches must be avoided.
 
 All differential inputs are terminated on the board with 100 Ω differential
@@ -645,7 +631,7 @@ the pin assignments of connectors JB1 and JB2 (see
 Some signals are optional and do not have to 
 be connected, as is described in :numref:`Section %s<sec io>`.
 
-Pins that must not be connected are marked as NC .
+Pins that must not be connected are marked as NC.
 
 
 .. _jb1 table:
@@ -679,7 +665,7 @@ standard (see :numref:`Section %s<sec signal standard>`)
     +------------------------------------------------------------------+-----+-----+-----------------------------------------------------------++---------------------------------------------------+-----+-----+-------------------------------------------------------------+
     | :ref:`PCIe_RX2_N <hardware:PCIe_RX[3:0]>`\ :sup:`1`              |  9  | 10  | :ref:`PCIe_TX3_N <hardware:PCIe_TX[3:0]>`\ :sup:`1`       || NC                                                | 59  | 60  | :ref:`DAC_SCLK <hardware:DAC Control>`\ :sup:`2`            |
     +------------------------------------------------------------------+-----+-----+-----------------------------------------------------------++---------------------------------------------------+-----+-----+-------------------------------------------------------------+
-    |  GND                                                             | 11  | 12  | GND                                                       || :ref:`VCC33 <hardware:VCC33 and VCC25>`\ :sup:`4` | 61  | 62  | :ref:`DAC_EN1 <hardware:DAC Control>`\ :sup:`2`             |
+    |  GND                                                             | 11  | 12  | GND                                                       || Connect to JB1-83                                 | 61  | 62  | :ref:`DAC_EN1 <hardware:DAC Control>`\ :sup:`2`             |
     +------------------------------------------------------------------+-----+-----+-----------------------------------------------------------++---------------------------------------------------+-----+-----+-------------------------------------------------------------+
     | :ref:`PCIe_RX1_P <hardware:PCIe_RX[3:0]>`\ :sup:`1`              | 13  | 14  | :ref:`PCIe_TX2_P <hardware:PCIe_TX[3:0]>`\ :sup:`1`       || :ref:`BOARD0 <hardware:BOARD[3:0]>`\ :sup:`2`     | 63  | 64  | :ref:`DAC_SYNC <hardware:DAC Control>`\ :sup:`2`            |
     +------------------------------------------------------------------+-----+-----+-----------------------------------------------------------++---------------------------------------------------+-----+-----+-------------------------------------------------------------+
@@ -699,13 +685,13 @@ standard (see :numref:`Section %s<sec signal standard>`)
     +------------------------------------------------------------------+-----+-----+-----------------------------------------------------------++---------------------------------------------------+-----+-----+-------------------------------------------------------------+
     | GND                                                              | 29  | 30  | GND                                                       || NC                                                | 79  | 80  | NC                                                          |
     +------------------------------------------------------------------+-----+-----+-----------------------------------------------------------++---------------------------------------------------+-----+-----+-------------------------------------------------------------+
-    | :ref:`PCIe_SMCLK <hardware:PCIe_SMCLK and PCIe_SMDAT>`\ :sup:`2` | 31  | 32  | :ref:`TiGer2_OE <hardware:TiGer Signals>`\ :sup:`2`       || NC                                                | 81  | 82  | :ref:`STAT_INITIALIZED <hardware:Status Signals>`\ :sup:`2` |
+    | GND                                                              | 31  | 32  | :ref:`TiGer2_OE <hardware:TiGer Signals>`\ :sup:`2`       || NC                                                | 81  | 82  | :ref:`STAT_INITIALIZED <hardware:Status Signals>`\ :sup:`2` |
     +------------------------------------------------------------------+-----+-----+-----------------------------------------------------------++---------------------------------------------------+-----+-----+-------------------------------------------------------------+
-    | :ref:`PCIe_SMDAT <hardware:PCIe_SMCLK and PCIe_SMDAT>`\ :sup:`2` | 33  | 34  | :ref:`TiGer3 <hardware:TiGer Signals>`\ :sup:`2`          || 3.3 V Testpin                                     | 83  | 84  | GND                                                         |
+    | GND                                                              | 33  | 34  | :ref:`TiGer3 <hardware:TiGer Signals>`\ :sup:`2`          || Connect to JB1-61                                 | 83  | 84  | GND                                                         |
     +------------------------------------------------------------------+-----+-----+-----------------------------------------------------------++---------------------------------------------------+-----+-----+-------------------------------------------------------------+
     | NC                                                               | 35  | 36  | :ref:`TiGer2 <hardware:TiGer Signals>`\ :sup:`2`          || NC                                                | 85  | 86  | :ref:`JTAG_TDI <hardware:JTAG Signals>`\ :sup:`2`           |
     +------------------------------------------------------------------+-----+-----+-----------------------------------------------------------++---------------------------------------------------+-----+-----+-------------------------------------------------------------+
-    | NC                                                               | 37  | 38  | :ref:`TiGer3_OE <hardware:TiGer Signals>`\ :sup:`2`       || NC                                                | 87  | 88  | :ref:`JTAG_TDO <hardware:JTAG Signals>`\ :sup:`2`           |
+    | GND                                                              | 37  | 38  | :ref:`TiGer3_OE <hardware:TiGer Signals>`\ :sup:`2`       || NC                                                | 87  | 88  | :ref:`JTAG_TDO <hardware:JTAG Signals>`\ :sup:`2`           |
     +------------------------------------------------------------------+-----+-----+-----------------------------------------------------------++---------------------------------------------------+-----+-----+-------------------------------------------------------------+
     | :ref:`TiGer1_OE <hardware:TiGer Signals>`\ :sup:`2`              | 39  | 40  | :ref:`TiGer4 <hardware:TiGer Signals>`\ :sup:`2`          || NC                                                | 89  | 90  | :ref:`JTAG_TCK <hardware:JTAG Signals>`\ :sup:`2`           |
     +------------------------------------------------------------------+-----+-----+-----------------------------------------------------------++---------------------------------------------------+-----+-----+-------------------------------------------------------------+

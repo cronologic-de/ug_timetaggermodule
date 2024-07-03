@@ -10,7 +10,7 @@ Refer to the main `TimeTagger4 User Guide
 User Guide
 ----------
 
-1.0.0-rc |emdash| 2024-06-11
+1.0.0 |emdash| 2024-07-03
     Initial release
     
 

@@ -42,7 +42,7 @@ jobs:
     - name: Compile pdf from tex
       uses: xu-cheng/latex-action@v3
       with:
-        root_file: timetaggermodulesuserguide.tex
+        root_file: timetaggermodulesintegrationguide.tex
         latexmk_use_lualatex: true
         working_directory: build/latex
         pre_compile: "tlmgr update --self && tlmgr update --all"
@@ -59,4 +59,4 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: pdf
-        path: build/latex/timetaggermodulesuserguide.pdf
+        path: build/latex/timetaggermodulesintegrationguide.pdf

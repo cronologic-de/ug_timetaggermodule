@@ -9,10 +9,13 @@ import os
 
 # sys.path.append(os.path.abspath("../exts/"))
 
+with open("version.txt") as f:
+    version = f.read()
+
 project = 'TimeTagger Modules Integration Guide'
 copyright = '2024, cronologic GmbH & Co. KG'
 author = 'cronologic GmbH & Co. KG'
-release = '1.0.0'
+release = version
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
@@ -34,7 +37,13 @@ extensions = [
 autosectionlabel_prefix_document = True
 autosectionlabel_maxdepth = None
 
-rst_prolog = open("global.rst", "r").read()
+with open("global.rst", "r") as f:
+    prolog_file = f.read()
+rst_prolog = f"""
+{prolog_file}
+
+.. |version| replace:: {version}
+"""
 
 templates_path = ['_templates']
 exclude_patterns = ["global.rst"]

@@ -95,8 +95,7 @@ as a modular version, as well, providing:
 - 60 MHits/s over all channels of sustained stops
 
 For an extensive overview of all features and functions, please refer to the
-`TimeTagger4 User Guide 
-<https://download.cronologic.de/TimeTagger/TimeTagger4_User_Guide.pdf>`_.
+`TimeTagger4 User Guide <https://download.cronologic.de/TimeTagger/TimeTagger4_User_Guide.pdf>`_.
 
 .. toctree::
    :maxdepth: 2

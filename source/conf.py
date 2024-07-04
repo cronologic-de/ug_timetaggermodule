@@ -9,7 +9,7 @@ import os
 
 # sys.path.append(os.path.abspath("../exts/"))
 
-project = 'TimeTagger Modules User Guide'
+project = 'TimeTagger Modules Integration Guide'
 copyright = '2024, cronologic GmbH & Co. KG'
 author = 'cronologic GmbH & Co. KG'
 release = '1.0.0'

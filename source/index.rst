@@ -1,5 +1,5 @@
 TimeTagger Modules Integration Guide
-=============================
+====================================
 
 .. only:: html
 

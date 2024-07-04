@@ -5,8 +5,8 @@
 
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
-import os
 
+# import os
 # sys.path.append(os.path.abspath("../exts/"))
 
 with open("version.txt") as f:

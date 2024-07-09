@@ -3,7 +3,7 @@ name: Build HTML and PDF documentation
 on:
   push:
     branches:
-      - main
+      - setup-workflows
   workflow_dispatch:
 
 jobs:
@@ -15,7 +15,7 @@ jobs:
       uses: actions/checkout@v4
       with:
         # checkout specific branch
-        ref: main
+        ref: setup-workflows
 
     - name: Set up Python
       uses: actions/setup-python@v5
@@ -30,33 +30,37 @@ jobs:
     - name: Build Sphinx HTML
       run: make html
 
-    - name: Upload zip to artifacts
-      uses: actions/upload-artifact@v4
-      with:
-        name: html
-        path: build/html
+    - name: Test
+      run: |
+        echo "{{ secrets.USERNAME }}"
 
-    - name: Build Sphinx latex file
-      run: make latex
+    # - name: Upload zip to artifacts
+    #   uses: actions/upload-artifact@v4
+    #   with:
+    #     name: html
+    #     path: build/html
 
-    - name: Compile pdf from tex
-      uses: xu-cheng/latex-action@v3
-      with:
-        root_file: timetaggermodulesintegrationguide.tex
-        latexmk_use_lualatex: true
-        working_directory: build/latex
-        pre_compile: "tlmgr update --self && tlmgr update --all"
+    # - name: Build Sphinx latex file
+    #   run: make latex
 
-    - name: upload log if latexmk fails
-      if: ${{ failure() }}
-      uses: actions/upload-artifact@v4
-      with:
-        name: latex_files
-        path: |
-          build/latex/*
+    # - name: Compile pdf from tex
+    #   uses: xu-cheng/latex-action@v3
+    #   with:
+    #     root_file: timetaggermodulesintegrationguide.tex
+    #     latexmk_use_lualatex: true
+    #     working_directory: build/latex
+    #     pre_compile: "tlmgr update --self && tlmgr update --all"
 
-    - name: Upload pdf to artifacts
-      uses: actions/upload-artifact@v4
-      with:
-        name: pdf
-        path: build/latex/timetaggermodulesintegrationguide.pdf
+    # - name: upload log if latexmk fails
+    #   if: ${{ failure() }}
+    #   uses: actions/upload-artifact@v4
+    #   with:
+    #     name: latex_files
+    #     path: |
+    #       build/latex/*
+
+    # - name: Upload pdf to artifacts
+    #   uses: actions/upload-artifact@v4
+    #   with:
+    #     name: pdf
+    #     path: build/latex/timetaggermodulesintegrationguide.pdf

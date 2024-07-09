@@ -30,7 +30,6 @@ jobs:
     - name: Build Sphinx HTML
       run: |
         make html
-        cd build/html
 
     - name: Deploy to docs.cronologic.de
       uses: appleboy/scp-action@v0.1.7
@@ -39,7 +38,7 @@ jobs:
         username: ${{ secrets.USERNAME }}
         port: ${{ secrets.PORT }}
         key: ${{ secrets.KEY }}
-        source: ./*
+        source: ./build/html/*
         target: httpdocs/tests
 
     # - name: Upload zip to artifacts

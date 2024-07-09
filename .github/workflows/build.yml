@@ -75,34 +75,3 @@ jobs:
         target: ${{ secrets.TARGETPDF }}
         strip_components: 3
         rm: true
-
-    # - name: Upload zip to artifacts
-    #   uses: actions/upload-artifact@v4
-    #   with:
-    #     name: html
-    #     path: build/html
-
-    # - name: Build Sphinx latex file
-    #   run: make latex
-
-    # - name: Compile pdf from tex
-    #   uses: xu-cheng/latex-action@v3
-    #   with:
-    #     root_file: timetaggermodulesintegrationguide.tex
-    #     latexmk_use_lualatex: true
-    #     working_directory: build/latex
-    #     pre_compile: "tlmgr update --self && tlmgr update --all"
-
-    # - name: upload log if latexmk fails
-    #   if: ${{ failure() }}
-    #   uses: actions/upload-artifact@v4
-    #   with:
-    #     name: latex_files
-    #     path: |
-    #       build/latex/*
-
-    # - name: Upload pdf to artifacts
-    #   uses: actions/upload-artifact@v4
-    #   with:
-    #     name: pdf
-    #     path: build/latex/timetaggermodulesintegrationguide.pdf

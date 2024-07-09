@@ -35,12 +35,6 @@ installation requirements. An overview of the **functionality** and the **C
 API** can be found in the
 `TimeTagger4 User Guide <https://download.cronologic.de/TimeTagger/TimeTagger4_User_Guide.pdf>`_.
 
-This Integration Guide is also available as
-`PDF download <https://docs.cronologic.de/_/downloads/timetaggermodule/en/latest/pdf/>`_.
-
-The user guides of all products by cronologic GmbH & Co. KG are available 
-online at `docs.cronologic.de <https://docs.cronologic.de>`_.
-
 .. "only html" and "raw latex" is to fix section numbering in the PDF output
    in the index page
 

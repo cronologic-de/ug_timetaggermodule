@@ -73,7 +73,7 @@ jobs:
         key: ${{ secrets.KEY }}
         source: ./build/latex/TimeTagger_Module_Integration_Guide.pdf
         target: ${{ secrets.TARGETPDF }}
-        strip_components: 2
+        strip_components: 3
         rm: true
 
     # - name: Upload zip to artifacts

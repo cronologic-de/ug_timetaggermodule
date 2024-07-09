@@ -32,7 +32,7 @@ jobs:
 
     - name: Test
       run: |
-        echo "{{ secrets.USERNAME }}"
+        echo "${{ secrets.USERNAME }}"
 
     # - name: Upload zip to artifacts
     #   uses: actions/upload-artifact@v4

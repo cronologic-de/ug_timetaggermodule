@@ -25,7 +25,7 @@ measurement setups and analyzers** without sacrificing performance and
 accuracy. They can be integrated via customer-specific analog front ends.
 
 The **TimeTagger modules** offer the same functionality as cronologic's 
-`TimeTagger PCIe boards <https://www.cronologic.de/product/timetagger>`_.
+`TimeTagger <https://www.cronologic.de/product/timetagger>`_ TDC cards.
 As such, they are ideally suitable in applications that do require a
 **compact form factor**, **high data-acquisition** rates,
 and low **multiple-hit** dead time.
@@ -34,6 +34,12 @@ This Integration Guide provides an overview of the modules operation and
 installation requirements. An overview of the **functionality** and the **C 
 API** can be found in the
 `TimeTagger4 User Guide <https://download.cronologic.de/TimeTagger/TimeTagger4_User_Guide.pdf>`_.
+
+.. raw:: latex
+
+    This Integration Guide is also available online at
+    \href{https://docs.cronologic.de/timetaggermodule/}{docs.cronologic.de/timetaggermodule}.
+    \vspace{-\baselineskip}
 
 .. "only html" and "raw latex" is to fix section numbering in the PDF output
    in the index page

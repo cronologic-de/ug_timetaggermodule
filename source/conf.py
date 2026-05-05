@@ -13,7 +13,7 @@ with open("version.txt") as f:
     version = f.read()
 
 project = 'TimeTagger Modules Integration Guide'
-copyright = '2024, cronologic GmbH & Co. KG'
+copyright = '2026, cronologic GmbH & Co. KG'
 author = 'cronologic GmbH & Co. KG'
 release = version
 

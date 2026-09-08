@@ -1,6 +1,6 @@
 [project]
 name = "ug-timetaggermodule"
-version = "1.0.2-dev"
+version = "1.0.2"
 description = "User Guide of cronologic's TimeTagger Module"
 readme = "README.md"
 requires-python = ">=3.12"

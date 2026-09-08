@@ -10,7 +10,7 @@ Refer to the main
 Integration Guide
 -----------------
 
-|version| |emdash| TBA
+1.0.2 |emdash| 2026-09-08
     | Update layout
 
 1.0.1 |emdash| 2024-07-09

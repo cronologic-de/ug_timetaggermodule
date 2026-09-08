@@ -1,17 +1,39 @@
-@import url("default.css");
+@font-face {
+    font-family: "montserrat";
+    src: url("montserrat-regular.woff2") format("woff2");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "montserrat";
+    src: url("montserrat-italic.woff2") format("woff2");
+    font-weight: 400;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "montserrat";
+    src: url("montserrat-bold.woff2") format("woff2");
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "montserrat";
+    src: url("montserrat-bolditalic.woff2") format("woff2");
+    font-weight: 700;
+    font-style: italic;
+}
 
 .ctypered {
-  color: #8E2100;
+    color: #8e2100;
 }
 .cronoblue {
-  color: #376EB5;
+    color: #376eb5;
 }
 .red {
-  color: red;
-}
-
-body {
-  font-feature-settings: "tnum" 1;
+    color: red;
 }
 
 div.sphinxsidebar {
@@ -22,13 +44,13 @@ div.sphinxsidebar {
 
 .sidebar-brand-text {
     color: var(--color-sidebar-brand-text);
-    font-size: 1.0rem;
+    font-size: 1rem;
     overflow-wrap: break-word;
 }
 
 .sidebar-brand:focus-within,
 .sidebar-brand:hover {
-    background: var(--color-sidebar-item-background--hover)
+    background: var(--color-sidebar-item-background--hover);
 }
 
 .sidebar-brand-extra {
@@ -36,11 +58,11 @@ div.sphinxsidebar {
     flex-direction: column;
     flex-shrink: 0;
     padding: 0 var(--sidebar-item-spacing-horizontal) 0;
-    text-decoration: none
+    text-decoration: none;
 }
 .sidebar-brand-extra:focus-within,
 .sidebar-brand-extra:hover {
-    background: var(--color-sidebar-item-background--hover)
+    background: var(--color-sidebar-item-background--hover);
 }
 
 .bottom-of-page-extra {
@@ -52,63 +74,61 @@ div.sphinxsidebar {
     line-height: 1.5;
     margin-top: 0;
     padding-bottom: 1rem;
-    padding-top: 1rem
+    padding-top: 1rem;
 }
 
+.my-pad {
+    margin-top: 1rem;
+}
 
-h1, h2, h3, h4, h5 h6 {
-  font-feature-settings: "tnum" 0;
-  font-weight: bold;
-  color: var(--color-headers);
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-feature-settings: "tnum" 0;
+    font-weight: bold;
+    color: var(--color-headers);
 }
 
 h1 {
-  font-size: 150%;
-  color: var(--color-first-header);
+    font-size: 150%;
+    color: var(--color-first-header);
 }
 
-
 h2 {
-  font-size: 130%;
+    font-size: 130%;
 }
 
 h3 {
-  font-size: 110%;
+    font-size: 110%;
 }
 
 h4,
 h5,
 h6 {
-  font-size: 100%;
-  color: var(--color-foreground-primary);
+    font-size: 100%;
 }
 
-table>caption {
-    font-size: var(--font-size--medium);
-    text-align: left
-}
-
-.table-wrapper {
-  font-size: var(--font-size--small);
-}
-
-.caption-number{
-  font-weight: bold;
+.caption-number {
+    font-weight: bold;
 }
 
 .caption-number,
 .caption-text {
-  color: grey;
+    color: grey;
 }
 
 figcaption {
-  padding-bottom: 2.25em;
+    padding-bottom: 2.25em;
 }
 
-overline {
-  text-decoration: overline;
+figure,
+.figure {
+    padding-top: 1.2rem;
 }
 
-div.indent1 {
-  margin-left: 40px;
+body {
+    font-feature-settings: "tnum" 1;
 }

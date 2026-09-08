@@ -6,15 +6,24 @@
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-# import os
-# sys.path.append(os.path.abspath("../exts/"))
+import pathlib
+import tomllib
 
-with open("version.txt") as f:
-    version = f.read()
 
-project = 'TimeTagger Modules Integration Guide'
-copyright = '2026, cronologic GmbH & Co. KG'
-author = 'cronologic GmbH & Co. KG'
+def get_version() -> str:
+    pyproject = pathlib.Path("../pyproject.toml")
+    if pyproject.exists():
+        with pyproject.open("rb") as f:
+            data = tomllib.load(f)
+        return data.get("project", {}).get("version")
+    return "0.0.0"
+
+
+version = get_version()
+
+project = "TimeTagger Modules Integration Guide"
+copyright = "2024, cronologic GmbH & Co. KG"
+author = "cronologic GmbH & Co. KG"
 release = version
 
 # -- General configuration ---------------------------------------------------
@@ -22,17 +31,7 @@ release = version
 
 extensions = [
     "sphinx.ext.autosectionlabel",
-    # "sphinxcontrib.kroki",
-    # "breathe",
-    # "sphinxcontrib.wavedrom",
 ]
-
-# render_using_wavedrompy = True
-
-# breathe_projects = {"ndigo6g12_api": os.fspath("../build/doxygen/xml/")}
-# breathe_default_project = "ndigo6g12_api"
-# breathe_show_include = False
-# breathe_show_define_initializer = True
 
 autosectionlabel_prefix_document = True
 autosectionlabel_maxdepth = None
@@ -45,7 +44,7 @@ rst_prolog = f"""
 .. |version| replace:: {version}
 """
 
-templates_path = ['_templates']
+templates_path = ["_templates"]
 exclude_patterns = ["global.rst"]
 
 
@@ -94,22 +93,24 @@ html_favicon = "_static/cronologic_favicon.svg"
 html_title = f"{project}"
 html_secnumber_suffix = " "
 html_logo = "_static/cronologic.svg"
-html_static_path = ['_static']
+html_static_path = ["_static"]
 html_css_files = ["custom.css"]
 
-# latex_toplevel_sectioning = "section" 
+# latex_toplevel_sectioning = "section"
 
-latex_engine = 'xelatex'
+latex_engine = "xelatex"
 latex_xindy_use = False
 latex_elements = {
     "papersize": "a4paper",
     "pointsize": "12pt",
-    "fontpkg" : "",
+    "fontpkg": "",
     "preamble": r"""
         \usepackage[
-            font=montserrat,
             sphinx,
+            pdfkeywords={TDC, Time-to-Digital Converter, TimeTagger4,
+                         TimeTagger Module, User Guide},
             noframe=false,
+            webpage=https://docs.cronologic.de/timetaggermodule,
         ]
         {cronologicug}
         \definecolor{ctypered}{RGB}{142,33,0} % C-type auto highlighting color
@@ -119,23 +120,20 @@ latex_elements = {
         \setcounter{tocdepth}{4}
     """,
     "extraclassoptions": r"openany",
-    "tableofcontents":r"\tableofcontents",
+    "tableofcontents": r"\tableofcontents",
     "maketitle": r"\includepdf[pages=-]{TimeTagger_Front.pdf}",
     "releasename": "Rev.",
     "makeindex": "",
     "printindex": "",
 }
-latex_theme = "manual" # manual (book class) or howto (article class)
+latex_theme = "manual"  # manual (book class) or howto (article class)
 latex_additional_files = [
     "cronologicug.sty",
     "extraplaceins.sty",
-    "TimeTagger_Front.pdf"
+    "TimeTagger_Front.pdf",
 ]
 latex_table_style = []
 
 numfig = True
-numfig_format = {
-    "figure":"Figure %s:",
-    "table":"Table %s:"
-}
+numfig_format = {"figure": "Figure %s:", "table": "Table %s:"}
 numfig_secnum_depth = 1

@@ -27,13 +27,13 @@ Overview
     :width: 40%
 
     Bottom-view of a TimeTagger Module. For the pin assignment of connectors
-    JB1 and JB2, see :numref:`Section %s<pin assignment>`. In the above
+    JB1 and JB2, see :ref:`pin assignment`. In the above
     image, Pin 1 is at the bottom right of the connectors, respectively.
 
 :numref:`Figures %s<fig top>` and :numref:`%s<fig bottom>` show the top and
 bottom view of the module.
 
-The TimeTagger Module is connected to a carrier board using two 
+The TimeTagger Module is connected to a carrier board using two
 B2B connectors Samtec Razor Beam\ :sup:`TM` LSHM-150 (JB1, JB2).
 :numref:`Figure %s<fig connector placement>` shows the dimensions of the
 board as well as the positioning of the two B2B connectors.
@@ -76,7 +76,7 @@ Inputs and Outputs
 
 :numref:`Figure %s<fig io diagram>` gives an overview of the required and
 optional input and output signals of the TimeTagger Module. The required
-standards are listed in :numref:`Section %s<sec signal standard>`.
+standards are listed in :ref:`sec signal standard`.
 
 .. _fig io diagram:
 
@@ -183,7 +183,7 @@ In a PCIe_CEM system, this should be connected to the corresponding signal
 from the edge connector. In an embedded system the requirements can vary,
 but it could be controlled by a microcontroller output.
 
-Timing should comply to the PCIe_CEM specification. 
+Timing should comply to the PCIe_CEM specification.
 
 .. raw:: html
 
@@ -203,7 +203,7 @@ The _P and _N signals of each pair can be flipped to simplify routing.
 The PCIe protocol will detect and correct the inversion.
 
 Lanes 0 to 3, or lanes 0 and 1, or only lane 0 can be connected to the
-host. The ordering of lanes can be reversed to simplify routing. 
+host. The ordering of lanes can be reversed to simplify routing.
 
 .. raw:: html
 
@@ -284,7 +284,7 @@ as the firmware delivered with the module provides the capability to
 update the firmware over PCIe.
 
 However, we recommend implementing a JTAG connector anyway if space is
-available, to simplify debugging of the base board. See 
+available, to simplify debugging of the base board. See
 :numref:`Figure %s<fig jtag circuit diagram>` for the implementation.
 
 There are various JTAG cables for FPGA development available.
@@ -309,7 +309,7 @@ by Digilent, provided, e.g., by
 **JTAG_TDO**
     3.3 V CMOS output.
 
-    Data from the FPGA to the JTAG controller. 
+    Data from the FPGA to the JTAG controller.
 
 **JTAG_TMS**
     3.3 V CMOS input.
@@ -321,7 +321,7 @@ by Digilent, provided, e.g., by
 **JTAG_TCK**
     3.3 V CMOS input.
 
-    Clock signal from the JTAG controller to the FPGA. 
+    Clock signal from the JTAG controller to the FPGA.
 
     If JTAG is used, a 50 Ω termination close to the FPGA module is
     required.
@@ -368,7 +368,7 @@ could alternatively be connected to microcontroller inputs.
     3.3 V CMOS output.
 
     Provide status information. These can be connected to 3.3 V via
-    120 Ω series resistor and an LED.  
+    120 Ω series resistor and an LED.
 
     STAT_CAPTURE[0] is set HIGH when the driver is in the capturing state.
 
@@ -400,7 +400,7 @@ TiGer Signals
     3.3 V CMOS output.
 
     These pins are controlled by the TiGer timing generator. They can be
-    used to control the timing of the system with high precision. 
+    used to control the timing of the system with high precision.
 
 **TiGer_OE[4:0]**
     3.3 V CMOS output. Output Enable for the TiGer.
@@ -441,7 +441,7 @@ DAC2 has the discriminator thresholds of the for stop channels on its
 VOUTx outputs.
 
 DAC3 is not supported yet. The enable is provided to allow future
-versions with more channels. 
+versions with more channels.
 
 It is possible to change the meaning of the voltages. For example,
 VOUTD of DAC1 can be used as a common threshold for all inputs.
@@ -546,7 +546,7 @@ An uninterrupted reference plane should be on the next layer along the whole
 stretch of the connection. Stubs and branches must be avoided.
 
 All differential inputs are terminated on the board with 100 Ω differential
-termination. 
+termination.
 
 
 .. _sec signal standard:
@@ -554,8 +554,8 @@ termination.
 Signal Standards
 ----------------
 
-The superscript next to the signal names of the tables in
-:numref:`Sections %s<jb1 table>` and :numref:`%s<jb2 table>` refer to the
+The superscript next to the signal names of the tables in Sections
+:ref:`jb1 table` and :ref:`jb2 table` refer to the
 signal standard, as listed below.
 
 :sup:`1`\ PCIe
@@ -563,7 +563,7 @@ signal standard, as listed below.
     PCIe_CEM standard.
 
 :sup:`2`\ LVCMOS33
-    For input signals, V\ :sub:`IL` and V\ :sub:`IH` specify the 
+    For input signals, V\ :sub:`IL` and V\ :sub:`IH` specify the
     input voltage for LOW and HIGH, respectively.
 
     For output signals, V\ :sub:`OL` and V\ :sub:`OH` specify the output
@@ -572,7 +572,7 @@ signal standard, as listed below.
 .. raw:: html
 
     <div class="indent1">
-    
+
 .. table::
     :width: 100%
 
@@ -603,7 +603,7 @@ signal standard, as listed below.
     | Symbol          | Min | Typical | Max | Unit |
     +=================+=====+=========+=====+======+
     | V\ :sub:`IDIFF` | 100 | 350     | 600 | mV   |
-    +-----------------+-----+---------+-----+------+ 
+    +-----------------+-----+---------+-----+------+
     | V\ :sub:`ICM`   | 0.3 | 1.2     | 1.5 | V    |
     +-----------------+-----+---------+-----+------+
 
@@ -624,12 +624,12 @@ signal standard, as listed below.
 Pin Assignment
 --------------
 
-The tables in :numref:`Sections %s<jb1 table>` and :numref:`%s<jb2 table>` list
+The tables in Sections :ref:`jb1 table` and :ref:`jb2 table` list
 the pin assignments of connectors JB1 and JB2 (see
 :numref:`Figure %s<fig underneath>`).
 
-Some signals are optional and do not have to 
-be connected, as is described in :numref:`Section %s<sec io>`.
+Some signals are optional and do not have to
+be connected, as is described in :ref:`sec io`.
 
 Pins that must not be connected are marked as NC.
 
@@ -640,7 +640,7 @@ Connector JB1
 ^^^^^^^^^^^^^
 
 Pin assignment of the JB1 connector. The superscripts refer to the signal
-standard (see :numref:`Section %s<sec signal standard>`)
+standard (see :ref:`sec signal standard`)
 
 .. raw:: latex
 
@@ -720,7 +720,7 @@ Connector JB2
 ^^^^^^^^^^^^^
 
 Pin assignment of the JB1 connector. The superscripts refer to the signal
-standard (see :numref:`Section %s<sec signal standard>`)
+standard (see :ref:`sec signal standard`)
 
 .. raw:: latex
 

@@ -11,20 +11,22 @@ jobs:
 
     steps:
     - name: Checkout code
-      uses: actions/checkout@v4
+      uses: actions/checkout@v7
       with:
         # checkout specific branch
         ref: main
 
-    - name: Set up Python
-      uses: actions/setup-python@v5
+    - name: Install uv
+      uses: astral-sh/setup-uv@20cfd1bf945f4377ade1205e4dbc17946fc9a30d
       with:
-        python-version: 3.12
-        cache: 'pip'
+        enable-cache: true
+        version: latest
+
+    - name: Set up Python
+      run: uv python install
+
     - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install -r requirements.txt
+      run: uv sync --frozen --no-dev
 
     - name: Build project
       run: |
@@ -32,7 +34,7 @@ jobs:
         make latex
 
     - name: Compile PDF
-      uses: xu-cheng/latex-action@v3
+      uses: xu-cheng/latex-action@v4
       with:
         root_file: timetaggermodulesintegrationguide.tex
         latexmk_use_lualatex: true
@@ -41,7 +43,7 @@ jobs:
 
     - name: Upload log if latexmk fails
       if: ${{ failure() }}
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v7
       with:
         name: latex_files
         path: |
@@ -52,7 +54,7 @@ jobs:
         mv build/latex/timetaggermodulesintegrationguide.pdf build/latex/TimeTagger_Module_Integration_Guide.pdf
 
     - name: Publish HTML
-      uses: appleboy/scp-action@v0.1.7
+      uses: appleboy/scp-action@v1
       with:
         host: ${{ secrets.HOST }}
         username: ${{ secrets.USERNAME }}
@@ -64,7 +66,7 @@ jobs:
         rm: true
 
     - name: Publish PDF
-      uses: appleboy/scp-action@v0.1.7
+      uses: appleboy/scp-action@v1
       with:
         host: ${{ secrets.HOST }}
         username: ${{ secrets.USERNAME }}

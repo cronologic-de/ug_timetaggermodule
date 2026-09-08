@@ -1,5 +1,5 @@
-\NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{cronologicug}[2024-01-25]
+\NeedsTeXFormat{LaTeX2e}[2022-06-01]
+\ProvidesPackage{cronologicug}[2026-04-29]
 \author{cronologic GmbH \& Co KG}
 
 \RequirePackage{iftex}
@@ -10,71 +10,42 @@
   \special{pdf:minorversion 7}
 \fi
 
-\RequirePackage{ifthen}
+\DeclareKeys{
+  sphinx.if               = @crono@sphinx,
+  noframe.if              = @crono@noframe,
+  monofontdescriptions.if = @crono@monofontdescriptions,
+  pdfsubject.store  = \@crono@subject,
+  pdfkeywords.store = \@crono@keywords,
+  pdflang.store     = \@crono@language,
+  left.store   = \@crono@left,
+  right.store  = \@crono@right,
+  top.store    = \@crono@top,
+  bottom.store = \@crono@bottom,
+  framemargin.store    = \@crono@framemargin,
+  frameoffset.store    = \@crono@frameoffset,
+  framelinesep.store   = \@crono@framelinesep,
+  framelinewidth.store = \@crono@framelinewidth,
+  headsep.store = \@crono@headsep,
+  footskip.store = \@crono@footskip,
+  webpage.store = \@crono@webpage,
+}
 
-\RequirePackage{kvoptions}
-\SetupKeyvalOptions{family=crono, prefix=@crono@}
+\SetKeys{
+  noframe = false,
+  pdflang = en,
+  left    = 1.5cm,
+  right   = 1.5cm,
+  top     = 1.5cm,
+  bottom  = 1.5cm,
+  framemargin    = 1.25cm,
+  frameoffset    = 0.8cm,
+  framelinesep   = 0.6pt,
+  framelinewidth = 0.3pt,
+  headsep        = 0.35cm,
+  footskip       = 18pt,
+}
 
-\DeclareStringOption[montserrat]{font}
-\DeclareBoolOption[false]{sphinx}
-\DeclareBoolOption[false]{noframe}
-\DeclareBoolOption[false]{monofontdescriptions}
-\DeclareStringOption{pdfsubject}
-\DeclareStringOption{pdfkeywords}
-\DeclareStringOption{pdflang}
-\DeclareStringOption[1.5cm]{left}
-\DeclareStringOption[1.5cm]{right}
-\DeclareStringOption[1.5cm]{top}
-\DeclareStringOption[1.5cm]{bottom}
-\DeclareStringOption[1.25cm]{framemargin}
-\DeclareStringOption[0.8cm]{frameoffset}
-\DeclareStringOption[0.6pt]{framelinesep}
-\DeclareStringOption[0.3pt]{framelinewidth}
-\DeclareStringOption[0.35cm]{headsep}
-\DeclareStringOption[18pt]{footskip}
-
-\ProcessKeyvalOptions{crono}
-
-% This style of keyword processing only works in LaTeX2e 2022-06-01, which is
-% not always available
-%
-%\DeclareKeys{
-%  font.store              = \@crono@font, 
-%  sphinx.if               = @crono@sphinx,
-%  noframe.if              = @crono@noframe,
-%  monofontdescriptions.if = @crono@monofontdescriptions,
-%  pdfsubject.store  = \@crono@pdfsubject,
-%  pdfkeywords.store = \@crono@pdfkeywords,
-%  pdflang.store     = \@crono@pdflanguage,
-%  left.store   = \@crono@left,
-%  right.store  = \@crono@right,
-%  top.store    = \@crono@top,
-%  bottom.store = \@crono@bottom,
-%  framemargin.store    = \@crono@framemargin,
-%  frameoffset.store    = \@crono@frameoffset,
-%  framelinesep.store   = \@crono@framelinesep,
-%  framelinewidth.store = \@crono@framelinewidth,
-%  headsep.store = \@crono@headsep,
-%  footskip.store = \@crono@footskip,
-%}
-%
-%\SetKeys{
-%  font    = montserrat,
-%  noframe = false,
-%  pdflang = en,
-%  left    = 1.5cm,
-%  right   = 1.5cm,
-%  top     = 1.5cm,
-%  bottom  = 1.5cm,
-%  framemargin    = 1.25cm,
-%  frameoffset    = 0.8cm,
-%  framelinesep   = 0.6pt,
-%  framelinewidth = 0.3pt,
-%  headsep        = 0.35cm,
-%  footskip       = 18pt,
-%}
-%
-%\ProcessKeyOptions
+\ProcessKeyOptions
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % colors
@@ -94,16 +65,17 @@
 % miscellaneous
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \RequirePackage{graphicx}
-\RequirePackage{tabularx}
+\RequirePackage{tabularx,xltabular}
 \RequirePackage{siunitx}
 \RequirePackage{fancyhdr}
+\RequirePackage{ifthen}
 
-\ifthenelse{\boolean{@crono@monofontdescriptions}}{
+\if@crono@monofontdescriptions
   \RequirePackage{enumitem} % customized list layouts
   \setlist[description]{
     font={\ttfamily\bfseries}
   }
-}{\relax}
+\fi
 
 \RequirePackage{polyglossia}
 \RequirePackage{pdfpages} % include pdfs with, e.g.,
@@ -145,6 +117,12 @@
   extendedchars=true,
 }
 
+% make hyphenation unlikely
+\RequirePackage[none]{hyphenat}
+\sloppy
+\emergencystretch=3em
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Text setup
@@ -181,125 +159,38 @@
 
 \defaultfontfeatures{Scale=MatchLowercase}
 
-% font option "montserrat"
-% since Montserrat doesn't have a Mono/Math font, set up different fonts
-% for that
-\ifthenelse{\equal{\@crono@font}{montserrat}}
-{
-    \setmainfont[
-        ItalicFont={Montserrat-Italic.otf},
-        BoldFont={Montserrat-Bold.otf},
-        BoldItalicFont={Montserrat-BoldItalic.otf},
-        Numbers=Tabular,
-    ]{Montserrat-Regular.otf}
-    \setsansfont[
-        ItalicFont={Montserrat-Italic.otf},
-        Numbers=Tabular,
-        BoldFont={Montserrat-Bold.otf},
-        BoldItalicFont={Montserrat-BoldItalic.otf}
-    ]{Montserrat-Regular.otf}
+\setmainfont[
+    ItalicFont={Montserrat-Italic.otf},
+    BoldFont={Montserrat-Bold.otf},
+    BoldItalicFont={Montserrat-BoldItalic.otf},
+    Numbers=Tabular,
+]{Montserrat-Regular.otf}
+\setsansfont[
+    ItalicFont={Montserrat-Italic.otf},
+    Numbers=Tabular,
+    BoldFont={Montserrat-Bold.otf},
+    BoldItalicFont={Montserrat-BoldItalic.otf}
+]{Montserrat-Regular.otf}
 
-    \setmonofont[
-      Scale=MatchLowercase,
-      ItalicFont={SourceCodePro-RegularIt.otf},
-      BoldFont={SourceCodePro-Bold.otf},
-      BoldItalicFont={SourceCodePro-BoldIt.otf}
-    ]{SourceCodePro-Regular.otf}
+\setmonofont[Scale=MatchLowercase]{Latin Modern Mono Light}
+\setmathfont[Scale=MatchUppercase]{Latin Modern Math}
 
-    \setmathfont[Scale=MatchUppercase]{Latin Modern Math}
+\setmathfont[range=up/{latin,Latin,num},Numbers=Tabular]{Montserrat-Regular.otf}
+\setmathfont[range=it/{latin,Latin},Numbers=Tabular]{Montserrat-Italic.otf}
+\setmathfont[range=bfup/{latin,Latin,num},Numbers=Tabular]{Montserrat-Bold}
+\setmathfont[range=bfit/{latin,Latin},Numbers=Tabular]{Montserrat-BoldItalic.otf}
 
-    \setmathfont[range=up/{latin,Latin,num},Numbers=Tabular]{Montserrat-Regular.otf}
-    \setmathfont[range=it/{latin,Latin},Numbers=Tabular]{Montserrat-Italic.otf}
-    \setmathfont[range=bfup/{latin,Latin,num},Numbers=Tabular]{Montserrat-Bold}
-    \setmathfont[range=bfit/{latin,Latin},Numbers=Tabular]{Montserrat-BoldItalic.otf}
+\setmathfont[range=up/{greek,Greek}]{KerkisSans.otf}
+\setmathfont[range=it/{greek,Greek}]{KerkisSans-Italic.otf}
+\setmathfont[range=bfup/{greek,Greek}]{KerkisSans-Bold.otf}
+\setmathfont[range=bfit/{greek,Greek}]{KerkisSans-BoldItalic.otf}
 
-    \setmathfont[range=up/{greek,Greek}]{KerkisSans.otf}
-    \setmathfont[range=it/{greek,Greek}]{KerkisSans-Italic.otf}
-    \setmathfont[range=bfup/{greek,Greek}]{KerkisSans-Bold.otf}
-    \setmathfont[range=bfit/{greek,Greek}]{KerkisSans-BoldItalic.otf}
+\newfontfamily\cronoheaderfont[
+    ItalicFont={TexGyreAdventor-Italic.otf},
+    BoldFont={TexGyreAdventor-Bold.otf},
+    BoldItalicFont={TexGyreAdventor-BoldItalic.otf}
+]{TexGyreAdventor-Regular.otf}
 
-    \newfontfamily\cronoheaderfont[
-        ItalicFont={Montserrat-Italic.otf},
-        BoldFont={Montserrat-Bold.otf},
-        BoldItalicFont={Montserrat-BoldItalic.otf}
-    ]{Montserrat-Regular.otf}
-}{\relax}
-
-% Font option "fira"
-% https://www.ctan.org/tex-archive/fonts/fira
-% https://www.ctan.org/pkg/firamath
-\ifthenelse{\equal{\@crono@font}{fira}}
-{
-    \setmainfont[
-        ItalicFont={FiraSans-Italic.otf},
-        BoldFont={FiraSans-Bold.otf},
-        BoldItalicFont={FiraSans-BoldItalic.otf}
-    ]{FiraSans-Regular.otf}
-
-    \setsansfont[
-        ItalicFont={FiraSans-Italic.otf},
-        BoldFont={FiraSans-Bold.otf},
-        BoldItalicFont={FiraSans-BoldItalic.otf}
-    ]{FiraSans-Regular.otf}
-
-    \setmonofont[
-        ItalicFont={FiraMono-Oblique.otf},
-        BoldFont={FiraMono-Bold.otf},
-        BoldItalicFont={FiraMono-BoldOblique.otf}
-    ]{FiraMono-Regular.otf}
-
-    \newfontfamily\cronoheaderfont
-    [
-        ItalicFont={Montserrat-Italic.otf},
-        BoldFont={Montserrat-Bold.otf},
-        BoldItalicFont={Montserrat-BoldItalic.otf}
-    ]
-    {Montserrat-Regular.otf}
-
-    \setmathfont{Fira Math}
-}{\relax}
-
-% font option "avenirnext"
-% The fonts Avenir Next and AvantGarde must be installed on the System
-\ifthenelse{\equal{\@crono@font}{avenirnext}}
-{
-    \setmainfont[Numbers=Tabular]{Avenir Next}
-    \setsansfont[Numbers=Tabular]{Avenir Next}
-
-    \setmonofont[
-      Scale=MatchLowercase,
-      ItalicFont={SourceCodePro-RegularIt.otf},
-      BoldFont={SourceCodePro-Bold.otf},
-      BoldItalicFont={SourceCodePro-BoldIt.otf}
-    ]{SourceCodePro-Regular.otf}
-
-    \setmathfont[Scale=MatchUppercase]{Latin Modern Math}
-    % \setmathfont{TeX Gyre Termes Math}
-
-    \setmathfont[
-      Numbers=Tabular,
-      range=up/{latin,Latin,num,greek,Greek}
-    ]{Avenir Next}
-    \setmathfont[
-      Numbers=Tabular,
-      range=it/{latin,Latin,greek,Greek}
-    ]{Avenir Next Italic}
-    \setmathfont[
-      Numbers=Tabular,
-      range=bfup/{latin,Latin,num,greek,Greek}
-    ]{Avenir Next Demi Bold}
-    \setmathfont[
-      Numbers=Tabular,
-      range=bfit/{latin,Latin,greek,Greek}
-    ]{Avenir Next Demi Bold Italic}
-
-    \newfontfamily\cronoheaderfont{Avgardm.ttf}
-}{\relax}
-
-\ifthenelse{\equal{\@crono@font}{default}}
-{
-    \newcommand\cronoheaderfont{}
-}{\relax}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Definitions for the whole document 
@@ -331,86 +222,103 @@
 % headings
 \RequirePackage{titlesec}
 \titleformat{\chapter}%
-    {\cronoheaderfont\LARGE\bfseries\color{cronoorange}}%
+    {\cronoheaderfont\Huge\bfseries\color{cronoorange}}%
     {\thechapter}{1em}{\thispagestyle{normal}}{}
 \titlespacing*{\chapter}%
     {0ex}{0ex}{*2}
 
 \titleformat{\section}%
-    {\cronoheaderfont\Large\bfseries\color{cronoorange}}%
+    {\cronoheaderfont\LARGE\bfseries\color{cronoorange}}%
     {\thesection}{1em}{}{}
 
 \titleformat{\subsection}%
-    {\cronoheaderfont\large\bfseries\color{cronoblue}}%
+    {\cronoheaderfont\Large\bfseries\color{cronoblue}}%
     {\thesubsection}{1em}{}{}
 
 \titleformat{\subsubsection}%
-    {\cronoheaderfont\bfseries\itshape\color{cronoblue}}%
+    {\cronoheaderfont\large\bfseries\itshape\color{cronoblue}}%
     {\thesubsubsection}{1em}{}{}
     
 % draw frame around text
-\ifthenelse{\boolean{@crono@noframe}}{
-  \relax
-}{
+\unless\if@crono@noframe
   \usetikzlibrary{calc}
   \AddToHook{shipout/background}{
-    \begin{tikzpicture}[remember picture,overlay]%
-    % left lines
-    \draw [line width=\@crono@framelinewidth,cronolightgrey] 
-    ($(current page.north west)+(\@crono@framemargin,-\@crono@frameoffset)$)
-    -- ($(current page.south west)+(\@crono@framemargin,\@crono@frameoffset)$);
-    \draw [line width=\@crono@framelinewidth,cronolightgrey] 
-    ($(current page.north west)+
-      (\@crono@framemargin+\@crono@framelinesep,-\@crono@frameoffset)$)
-    -- 
-    ($(current page.south west)+
-      (\@crono@framemargin+\@crono@framelinesep,\@crono@frameoffset)$);
-    % right lines
-    \draw [line width=\@crono@framelinewidth,cronolightgrey] 
-    ($(current page.north east)+(-\@crono@framemargin,-\@crono@frameoffset)$)
-    -- ($(current page.south east)+(-\@crono@framemargin,\@crono@frameoffset)$);
-    \draw [line width=\@crono@framelinewidth,cronolightgrey] 
-    ($(current page.north east)+
-      (-\@crono@framemargin-\@crono@framelinesep,-\@crono@frameoffset)$)
-    -- 
-    ($(current page.south east)+
-      (-\@crono@framemargin-\@crono@framelinesep,\@crono@frameoffset)$);
-    % top lines
-    \draw [line width=\@crono@framelinewidth,cronolightgrey] 
-    ($(current page.north west)+(\@crono@frameoffset,-\@crono@framemargin)$)
-    -- ($(current page.north east)+(-\@crono@frameoffset,-\@crono@framemargin)$);
-    \draw [line width=\@crono@framelinewidth,cronolightgrey] 
-    ($(current page.north west)+
-      (\@crono@frameoffset,-\@crono@framemargin-\@crono@framelinesep)$)
-    -- 
-    ($(current page.north east)+
-      (-\@crono@frameoffset,-\@crono@framemargin-\@crono@framelinesep)$);
-    % bottom lines
-    \draw [line width=\@crono@framelinewidth,cronolightgrey]
-    ($(current page.south west)+(\@crono@frameoffset,\@crono@framemargin)$)
-    -- ($(current page.south east)+(-\@crono@frameoffset,\@crono@framemargin)$);
-    \draw [line width=\@crono@framelinewidth,cronolightgrey]
-    ($(current page.south west)+(\@crono@frameoffset,\@crono@framemargin+\@crono@framelinesep)$)
-    -- ($(current page.south east)+(-\@crono@frameoffset,\@crono@framemargin+\@crono@framelinesep)$);
-    \end{tikzpicture}
+    \ifnum\value{page}>1%
+      \begin{tikzpicture}[remember picture,overlay]%
+      % left lines
+      \draw [line width=\@crono@framelinewidth,cronolightgrey] 
+      ($(current page.north west)+(\@crono@framemargin,-\@crono@frameoffset)$)
+      -- ($(current page.south west)+(\@crono@framemargin,\@crono@frameoffset)$);
+      \draw [line width=\@crono@framelinewidth,cronolightgrey] 
+      ($(current page.north west)+
+        (\@crono@framemargin+\@crono@framelinesep,-\@crono@frameoffset)$)
+      -- 
+      ($(current page.south west)+
+        (\@crono@framemargin+\@crono@framelinesep,\@crono@frameoffset)$);
+      % right lines
+      \draw [line width=\@crono@framelinewidth,cronolightgrey] 
+      ($(current page.north east)+(-\@crono@framemargin,-\@crono@frameoffset)$)
+      -- ($(current page.south east)+(-\@crono@framemargin,\@crono@frameoffset)$);
+      \draw [line width=\@crono@framelinewidth,cronolightgrey] 
+      ($(current page.north east)+
+        (-\@crono@framemargin-\@crono@framelinesep,-\@crono@frameoffset)$)
+      -- 
+      ($(current page.south east)+
+        (-\@crono@framemargin-\@crono@framelinesep,\@crono@frameoffset)$);
+      % top lines
+      \draw [line width=\@crono@framelinewidth,cronolightgrey] 
+      ($(current page.north west)+(\@crono@frameoffset,-\@crono@framemargin)$)
+      -- ($(current page.north east)+(-\@crono@frameoffset,-\@crono@framemargin)$);
+      \draw [line width=\@crono@framelinewidth,cronolightgrey] 
+      ($(current page.north west)+
+        (\@crono@frameoffset,-\@crono@framemargin-\@crono@framelinesep)$)
+      -- 
+      ($(current page.north east)+
+        (-\@crono@frameoffset,-\@crono@framemargin-\@crono@framelinesep)$);
+      % bottom lines
+      \draw [line width=\@crono@framelinewidth,cronolightgrey]
+      ($(current page.south west)+(\@crono@frameoffset,\@crono@framemargin)$)
+      -- ($(current page.south east)+(-\@crono@frameoffset,\@crono@framemargin)$);
+      \draw [line width=\@crono@framelinewidth,cronolightgrey]
+      ($(current page.south west)+(\@crono@frameoffset,\@crono@framemargin+\@crono@framelinesep)$)
+      -- ($(current page.south east)+(-\@crono@frameoffset,\@crono@framemargin+\@crono@framelinesep)$);
+      \end{tikzpicture}
+    \fi%
   }
-}
+\fi
 
-\ifthenelse{\boolean{@crono@sphinx}}{
-  \newcommand{\@crono@foot}{\@title\sphinxheadercomma\py@release}
-}{
-  \newcommand{\@crono@foot}{\@title}
-}
+
+% if sphinx is not used, format headings etc
+\if@crono@sphinx
+  \newcommand{\cronotitle}{\@title\sphinxheadercomma\py@release}
+\else
+  \newcommand{\cronotitle}{\@title}
+\fi
 
 \fancypagestyle{normal}{
   \fancyhf{}
-  \fancyfoot[L]{\textcolor{cronogrey}{\llap{\hfill\bfseries\thepage\hspace*{10pt}}\href{https://www.cronologic.de}{\footnotesize\textbf{cronologic} GmbH \& Co. KG}}}
-  \fancyfoot[R]{\textcolor{cronogrey}{\footnotesize\@crono@foot}}
+  \fancyhead[L]{{\footnotesize\color{cronogrey}\nouppercase{\leftmark}}}
+  \fancyhead[R]{{\footnotesize\color{cronogrey}\nouppercase{\rightmark}}}
+  \fancyfoot[R]{{\color{cronogrey}}}
+  \fancyfoot[L]{{\color{cronogrey}\llap{\hfill\bfseries\thepage\hspace*{10pt}}\href{https://www.cronologic.de}{\footnotesize\textbf{cronologic} GmbH \& Co. KG}}}
+  \fancyfoot[R]{{\href{\@crono@webpage}{\footnotesize\color{cronogrey}\cronotitle}}}
   \renewcommand{\headrulewidth}{0pt}
   \renewcommand{\footrulewidth}{0pt}
 }
+\fancypagestyle{plain}{
+  \pagestyle{normal}
+  \fancyhead[L]{}
+  \fancyhead[R]{}
+}
+\setlength{\headheight}{14.5pt}
 \pagestyle{normal}
 
+% Remove "Contents" from header
+\renewcommand{\tableofcontents}{%
+  \chapter*{\contentsname}%
+  \@starttoc{toc}%
+  \markboth{}{}%
+}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % hyperref package should be included last
@@ -428,8 +336,8 @@
   \hypersetup{
     pdfauthor   = {\@author},
     pdftitle    = {\@title},
-    pdfkeywords = {\@crono@pdfkeywords},
-    pdfsubject  = {\@crono@pdfsubject},
-    pdflang     = {\@crono@pdflanguage},
+    pdfkeywords = {\@crono@keywords},
+    pdfsubject  = {\@crono@subject},
+    pdflang     = {\@crono@language},
   }
 }

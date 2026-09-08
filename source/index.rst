@@ -18,22 +18,22 @@ TimeTagger Modules Integration Guide
    \addcontentsline{toc}{chapter}{Introduction}
    \chapter*{Introduction}
 
-The compact `TimeTagger modules <https://www.cronologic.de/product/tdc-modules>`_ 
-from `cronologic <https://www.cronologic.de>`_ provide a practical solution 
-to the challenge of significantly **reducing space requirements in 
-measurement setups and analyzers** without sacrificing performance and 
+The compact `TimeTagger modules <https://www.cronologic.de/product/tdc-modules>`_
+from `cronologic <https://www.cronologic.de>`_ provide a practical solution
+to the challenge of significantly **reducing space requirements in
+measurement setups and analyzers** without sacrificing performance and
 accuracy. They can be integrated via customer-specific analog front ends.
 
-The **TimeTagger modules** offer the same functionality as cronologic's 
+The **TimeTagger modules** offer the same functionality as cronologic's
 `TimeTagger <https://www.cronologic.de/product/timetagger>`_ TDC cards.
 As such, they are ideally suitable in applications that do require a
 **compact form factor**, **high data-acquisition** rates,
 and low **multiple-hit** dead time.
 
-This Integration Guide provides an overview of the modules operation and 
-installation requirements. An overview of the **functionality** and the **C 
+This Integration Guide provides an overview of the modules operation and
+installation requirements. An overview of the **functionality** and the **C
 API** can be found in the
-`TimeTagger4 User Guide <https://download.cronologic.de/TimeTagger/TimeTagger4_User_Guide.pdf>`_.
+`TimeTagger4 User Guide <https://docs.cronologic.de/timetagger4>`_.
 
 .. raw:: latex
 
@@ -55,12 +55,12 @@ API** can be found in the
     \addcontentsline{toc}{section}{Module Overview}
     \section*{Module Overview}
 
-`cronologic <https://www.cronologic.de>`_ offers the 
+`cronologic <https://www.cronologic.de>`_ offers the
 `TimeTagger4-10G <https://www.cronologic.de/product/timetagger>`_ boards
 as a modular version, as well, providing:
 
 **Space-saving installation**
-    All TimeTagger modules can be installed via board-to-board connectors with 
+    All TimeTagger modules can be installed via board-to-board connectors with
     minimal hardware effort.
 
 **Integrate at minimum cost**
@@ -69,7 +69,7 @@ as a modular version, as well, providing:
 
 **Use the TiGer timing generator**
     Control your device with periodic pulse patterns, the exact timing of which
-    is measured by the TDC. You can use any input channel of our module to 
+    is measured by the TDC. You can use any input channel of our module to
     output these pulses.
 
 .. only:: html
@@ -95,14 +95,12 @@ as a modular version, as well, providing:
 - 60 MHits/s over all channels of sustained stops
 
 For an extensive overview of all features and functions, please refer to the
-`TimeTagger4 User Guide <https://download.cronologic.de/TimeTagger/TimeTagger4_User_Guide.pdf>`_.
+`TimeTagger4 User Guide <https://docs.cronologic.de/timetagger4>`_.
 
 .. toctree::
    :maxdepth: 2
-   :numbered: 3
    :hidden:
-   
+
    hardware
    techdata
    revhistory
-

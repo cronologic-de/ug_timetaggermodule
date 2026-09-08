@@ -106,9 +106,11 @@ latex_elements = {
     "fontpkg": "",
     "preamble": r"""
         \usepackage[
-            font=montserrat,
             sphinx,
+            pdfkeywords={TDC, Time-to-Digital Converter, TimeTagger4,
+                         TimeTagger Module, User Guide},
             noframe=false,
+            webpage=https://docs.cronologic.de/timetaggermodule,
         ]
         {cronologicug}
         \definecolor{ctypered}{RGB}{142,33,0} % C-type auto highlighting color

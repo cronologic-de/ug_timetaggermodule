@@ -64,3 +64,5 @@ you decide to contribute to this repository, you transfer non-exclusive but
 unlimited rights to your edit to cronologic GmbH & Co. KG.
 
 The file [extraplaceins.sty](extraplaceins.sty) is in the public domain.
+
+The Montserrat font is licensed under the [SIL OPEN FONT LICENSE](OFL.txt).
